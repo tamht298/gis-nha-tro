@@ -18,6 +18,12 @@
         <style>
         html, body {
             background-color: #ffffff;
+            
+        }
+        li.dropdown:hover > ul.dropdown-menu {
+                color: red;
+                display: block;
+                border: none;    
         }
         </style>
         <style>
@@ -61,15 +67,19 @@
 
                             <li class="nav-item mr-1 p-1">
                                 <a class="nav-link text-white navbar-text" href="lien-he"><i
-                                        class="fas fa-address-book"></i>
-                                    Liên
-                                    Hệ</a>
+                                        class="fas fa-address-book"></i>Liên Hệ</a>
                             </li>
                             @if(session()->has('tendn'))
-                            <li class="nav-item mr-1 p-1">
-                            
-                                <a class="nav-link text-white navbar-text" href="quan-ly-tro"><i
-                                        class="fas fa-file-alt"></i> Quản lý trọ </a>
+                            <li class="nav-item mr-1 p-1 dropdown">
+
+                                <a class="nav-link text-white navbar-text dropdown-toggle" data-toggle="dropdown" href="#"><i
+                                class="fas fa-file-alt"></i> Quản lý trọ </a>
+                                <ul class="dropdown-menu" role="menu" style="font-size:">
+                                    <li><a class="nav-link" href="thong-tin-chu-tro">Thông tin chủ trọ</a></li>
+                                    <li><a class="nav-link" href="danh-sach-tro">Danh sách sinh viên</a></li>
+                                    <li><a class="nav-link" href="danh-sach-bai-viet">Quản lý bài viết</a></li>                                 
+                                </ul>
+                                        
                            
                             </li>
                             <li class="nav-item mr-1 p-1" style="position: relative; left:80%">
