@@ -61,7 +61,7 @@
                         </ul>
                     </div>
                 </nav>
-            </div>
+            </div>      
 </div>
 <div class="dashboard-wrapper">
             <div class="dashboard-ecommerce">
@@ -98,7 +98,7 @@
                                                     </button>
                                             </div>
                                             <div class="modal-body">
-
+                                                
                                                 <div class="row">
                                                     <div class="form-group col-6">
                                                         <label class="col-form-label font-weight-bold">Tên tài khoản<span class="text-danger"> (*)</span></label>
@@ -108,19 +108,19 @@
                                                         <label class="col-form-label font-weight-bold">Mật khẩu<span class="text-danger"> (*)</span></label>
                                                         <input type="password" class="form-control" name="matkhau">
                                                     </div>
-
+                                                                     
                                                 </div>
 
                                                 <div class="row">
                                                     <div class="form-group col-6">
                                                         <label class="col-form-label font-weight-bold">Tên nhà trọ<span class="text-danger"> (*)</span></label>
-
+                                                        
                                                         <select name="makhutro" class="form-control">
                                                         <option value=""></option>
                                                         @foreach($khunhatro as $knt)
                                                             <option value="{{$knt->gid}}">{{$knt->tennhatro}}</option>
                                                         @endforeach
-
+                                                            
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-6">
@@ -130,8 +130,8 @@
                                                             <option value="1">Admin</option>
                                                         </select>
                                                     </div>
-
-                                                </div>
+                                                                     
+                                                </div>                                    
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger"
@@ -148,11 +148,11 @@
 
                             <!-- Search bar -->
 
-                            <div class="navbar-nav col-3 float-right">
+                            <div class="navbar-nav col-3 float-right">                               
                                         <div id="custom-search" class="top-search-bar">
                                             <input class="form-control" type="text" placeholder="Search..">
-
-                                        </div>
+                                        
+                                        </div>                                                                     
                             </div>
 
                             <!-- End search bar -->
@@ -160,7 +160,7 @@
                         </div>
 
 
-
+                        
                         <!-- Hiển thị thông báo thành công>-->
                         @if ( Session::has('success') )
                         <div class="alert alert-success alert-dismissible m-2" role="alert" id="success-alert">
@@ -191,8 +191,8 @@
                                             <th scope="col">STT</th>
                                             <th scope="col">Tên tài khoản</th>
                                             <th scope="col">Mã khu trọ</th>
-
-                                            <th scope="col">Quyền</th>
+                                            
+                                            <th scope="col">Quyền</th>                             
                                             <th scope="col">Thao tác</th>
                                         </tr>
                                     </thead>
@@ -206,10 +206,10 @@
                                             <th scope="row">{{$i++}}</th>
                                             <td>{{$item->tendangnhap}}</td>
                                             <td>{{$item->makhutro}}</td>
-
-                                            <td>{{$item->quyen===0 ? 'Chủ trọ' : 'Admin'}}</td>
+                                            
+                                            <td>{{$item->quyen===0 ? 'Chủ trọ' : 'Admin'}}</td>                                           
                                             <td>
-
+                                                
                                                 <span data-toggle="modal" data-target="#{{$sua}}">
                                                     <a href="#" class="text-success ml-3" data-toggle="tooltip"
                                                         data-placement="bottom" data-html="true" title="Sửa"><i
@@ -221,10 +221,10 @@
                                                             class="fa fa-trash-alt fa-lg"></i></a>
                                                 </span>
 
-
+                                                
 
                                                 <!-- Modal sửa -->
-
+                                                
                                                 <div class="modal fade" id="{{$sua}}" tabindex="-1" role="dialog"
                                                     aria-labelledby="editModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-lg" role="document">
@@ -239,7 +239,7 @@
                                                                     </button>
                                                             </div>
                                                             <div class="modal-body">
-
+                                                                
                                                                     <div class="row">
                                                                         <div class="form-group col-6">
                                                                             <label
@@ -249,19 +249,19 @@
                                                                         <div class="form-group col-6">
                                                                             <label
                                                                                 class="col-form-label font-weight-bold">Mật khẩu</label>
-                                                                            <input type="password" class="form-control"
+                                                                            <input type="text" class="form-control"
                                                                             name="matkhau" value="{{$item->matkhau}}">
                                                                         </div>
-                                                                    </div>
+                                                                    </div> 
 
                                                                     <div class="row">
                                                                         <div class="form-group col-6">
                                                                             <label
                                                                                 class="col-form-label font-weight-bold">Tên nhà trọ</label>
                                                                                 <select name="makhutro" class="form-control">
-
+                                                                                    
                                                                                     <option value=""></option>
-
+                                                                                    
                                                                                     @foreach($khunhatro as $knt)
                                                                                     <option
                                                                                         @if($knt->gid == $item->makhutro)
@@ -269,25 +269,25 @@
                                                                                         @endif
                                                                                          value="{{$knt->gid}}">{{$knt->tennhatro}}</option>
                                                                                     @endforeach
-
+                                                                                    
                                                                                 </select>
                                                                         </div>
-
+                                                                        
                                                                         <div class="form-group col-6">
                                                                             <label
                                                                                 class="col-form-label font-weight-bold">Quyền</label>
                                                                                 <select name="quyen" class="form-control">
                                                                                     <option selected hidden value="{{$item->quyen}}">{{ $item->quyen===0 ? 'Chủ trọ' : 'Admin' }}</option>
-
+                                                                                    
                                                                                     <option value="0">Chủ trọ</option>
                                                                                     <option value="1">Admin</option>
-
+                                                                                 
                                                                                 </select>
                                                                         </div>
-                                                                    </div>
+                                                                    </div> 
 
-
-
+                                                                        
+                                                                
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-danger"
@@ -299,7 +299,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
+                                                
                                                 <!-- End modal sửa -->
 
                                                 <!-- Modal xóa -->
@@ -351,7 +351,7 @@
                              Copyright © 2019 Team 01. All rights reserved.
                         </div>
                     </div>
-
+                    
                 </div>
             </div> -->
             <!-- ============================================================== -->
