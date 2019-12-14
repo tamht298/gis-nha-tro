@@ -177,20 +177,27 @@ class QLOTro extends Controller
         }
         if($taikhoan!= null)
         {
-            if(Hash::check($matkhaucu, $taikhoan->matkhau) && $matkhaumoi == $xacnhanmatkhaumoi)
-                {
-                    $taikhoan->matkhau = Hash::make($matkhaumoi);
-                    $taikhoan->save();
-                    Session::flash('success', 'Đổi mật khẩu thành công!');
-                }  
-            else if($matkhaumoi != $xacnhanmatkhaumoi){
-                Session::flash('error', 'Mật khẩu mới và xác nhận mật khẩu mới không trùng nhau!');
-            }
-            else
+            if(!Hash::check($matkhaumoi, $taikhoan->matkhau))
             {
-                Session::flash('error', 'Mật khẩu cũ không hợp lệ!');
+                if(Hash::check($matkhaucu, $taikhoan->matkhau) && $matkhaumoi == $xacnhanmatkhaumoi)
+                    {
+                        $taikhoan->matkhau = Hash::make($matkhaumoi);
+                        $taikhoan->save();
+                        Session::flash('success', 'Đổi mật khẩu thành công!');
+                    }  
+                else if($matkhaumoi != $xacnhanmatkhaumoi){
+                    Session::flash('error', 'Mật khẩu mới và xác nhận mật khẩu mới không trùng nhau!');
+                }
+                else
+                {
+                    Session::flash('error', 'Mật khẩu cũ không hợp lệ!');
+                }             
+                return redirect()->back();
             }
-            return redirect()->back();
+            else{
+                Session::flash('error', 'Mật khẩu mới không được phép giống mật khẩu cũ!');
+                return redirect()->back();
+            }
         }
         else
             return ('pages.login');        
