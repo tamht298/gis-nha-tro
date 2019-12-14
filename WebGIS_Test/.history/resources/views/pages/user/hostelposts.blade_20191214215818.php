@@ -46,9 +46,8 @@
 
                                         </div>
                                         <div class="modal-footer">
-                                            <input type="submit" class="btn btn-success" value="Thêm">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                                            
                                         </div>
 
                                         </form>
@@ -105,7 +104,7 @@
                             <table class="table table-striped">
                                 <thead style="background: #3CADF1; color: antiquewhite">
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">STT</th>
                                         <th scope="col">Tiêu đề</th>
                                         <th scope="col">Nội dung</th>
                                         <th scope="col">Ngày tạo</th>
@@ -163,10 +162,10 @@
 
                                         <td>
                                             <span data-toggle="modal" data-target="#{{$suabv}}">
-                                                <a href="#" class="text-success mr-1" data-toggle="tooltip" data-placement="left" data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
+                                                <a href="#" class="text-success" data-toggle="tooltip" data-placement="left" data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
                                             </span>
                                             <span data-toggle="modal" data-target="#{{$xoabv}}">
-                                                <a href="#" class="text-danger" data-toggle="tooltip" data-placement="right" data-html="true" title="Xóa"><i class="fa fa-trash-alt fa-lg"></i></a>
+                                                <a href="#" class="text-danger ml-3" data-toggle="tooltip" data-placement="right" data-html="true" title="Xóa"><i class="fa fa-trash-alt fa-lg"></i></a>
                                             </span>
 
                                             <!-- Modal sửa -->

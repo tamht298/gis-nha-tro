@@ -4,13 +4,13 @@
 <div class="bg-image-post">
     <div class="card-body">
         <div class="container">
-            <div class="row mt-2 mb-4">
+            <div class="row mt-12 mb-4">
             @foreach($dsBaiViet as $item)
                 <div class="col-md-6 m-top-ward mb-4">
                     <div class="card">
-                        <div class="card-header d-flex justify-content-center font-weight-bold h4">
+                        <div class="card-header d-flex justify-content-center font-weight-bold h4">                         
                             {{$item->tieude}}
-
+                                                
                         </div>
                         <div class="card-body bg-opacity">
 
@@ -25,10 +25,10 @@
                 </div>
             @endforeach
             </div>
-
+            
             <!-- Pagination -->
             <div class="row justify-content-end">
-                {{ $dsBaiViet->links() }}
+                {{ $dsBaiViet->links() }}           
             </div>
 
         </div>

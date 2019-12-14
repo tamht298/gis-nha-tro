@@ -46,9 +46,8 @@
 
                                         </div>
                                         <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                                             <input type="submit" class="btn btn-success" value="Thêm">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-
                                         </div>
 
                                         </form>
@@ -105,7 +104,7 @@
                             <table class="table table-striped">
                                 <thead style="background: #3CADF1; color: antiquewhite">
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">STT</th>
                                         <th scope="col">Tiêu đề</th>
                                         <th scope="col">Nội dung</th>
                                         <th scope="col">Ngày tạo</th>
@@ -128,45 +127,16 @@
                                         <th style="width: 30%;">{!! $item->noidung !!}</th>
                                         <th>{{$item->ngaytao}}</th>
                                         @switch($item->trangthaiduyet)
-                                        @case (0)
-                                        <th class="text-center">
-                                            <span class="text-warning mr-1"><i
-                                                    class="fas fa-dot-circle" data-toggle="tooltip" data-placement="right"
-                                                    data-html="true" title="Chờ duyệt"></i></span>
-
-                                        </th>
-
-                                        @break;
-                                        @case(1)
-                                    <th class="text-center">
-
-                                        <span class="text-success mr-1"><i
-                                                class="fas fa-check-circle" data-toggle="tooltip" data-placement="right"
-                                                data-html="true" title="Đã duyệt"></i></span>
-
-                                    </th>
-
-
-                                    {{-- end modal trạng thái --}}
-                                    @break
-                                    @case(2)
-                                    <th class="text-center">
-
-                                        <span class="text-danger mr-1"><i
-                                                class="fas fa-ban" data-toggle="tooltip" data-placement="right"
-                                                data-html="true" title="Không duyệt"></i></span>
-                                    </th>
-
-                                    @break
+                                        @case ()
                                         @endswitch
 
 
                                         <td>
                                             <span data-toggle="modal" data-target="#{{$suabv}}">
-                                                <a href="#" class="text-success mr-1" data-toggle="tooltip" data-placement="left" data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
+                                                <a href="#" class="text-success" data-toggle="tooltip" data-placement="left" data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
                                             </span>
                                             <span data-toggle="modal" data-target="#{{$xoabv}}">
-                                                <a href="#" class="text-danger" data-toggle="tooltip" data-placement="right" data-html="true" title="Xóa"><i class="fa fa-trash-alt fa-lg"></i></a>
+                                                <a href="#" class="text-danger ml-3" data-toggle="tooltip" data-placement="right" data-html="true" title="Xóa"><i class="fa fa-trash-alt fa-lg"></i></a>
                                             </span>
 
                                             <!-- Modal sửa -->
@@ -198,9 +168,8 @@
 
                                                         </div>
                                                         <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                                                             <input type="submit" class="btn btn-success" value="Cập nhật">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-
                                                         </div>
                                                         </form>
                                                     </div>
@@ -226,9 +195,8 @@
                                                         <div class="modal-footer">
                                                             <form action="{{ route('XoaBaiViet',['id' => $item->id])}}" method="post">
                                                                 @csrf
-                                                                <button type="submit" class="btn btn-danger">Xóa</button>
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-
+                                                                <button type="button" class="btn btn-danger float-left" data-dismiss="modal">Hủy</button>
+                                                                <button type="submit" class="btn btn-dark">Xóa</button>
                                                             </form>
                                                         </div>
                                                     </div>

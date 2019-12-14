@@ -163,7 +163,7 @@
 
                                         <td>
                                             <span data-toggle="modal" data-target="#{{$suabv}}">
-                                                <a href="#" class="text-success mr-1" data-toggle="tooltip" data-placement="left" data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
+                                                <a href="#" class="text-success" data-toggle="tooltip" data-placement="left" data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
                                             </span>
                                             <span data-toggle="modal" data-target="#{{$xoabv}}">
                                                 <a href="#" class="text-danger" data-toggle="tooltip" data-placement="right" data-html="true" title="Xóa"><i class="fa fa-trash-alt fa-lg"></i></a>
