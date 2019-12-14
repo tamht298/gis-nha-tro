@@ -8,7 +8,9 @@ use App\Otro;
 use App\baiviet;
 use App\khunhatro;
 use App\sinhvien;
+use App\taikhoan;
 use Session;
+use Hash;
 class QLOTro extends Controller
 {
     //
@@ -20,10 +22,10 @@ class QLOTro extends Controller
         return view('pages.admin.ThongTinTro',['dsOTro'=>$dsOTro, 'pageSize'=>$pageSize, 'student'=>$student]);
     }
 
-    public function DSSVTro()
+    public function DSSVTro(Request $req)
     {
         $pageSize = 4;
-        $idkhutro = 1;
+        $idkhutro = $request->session()->get('makhutro');
         $SVOTro=DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid','khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
         //$SVOTro = OTro::paginate($pageSize);
         return view('pages.user.hostel',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize]);
@@ -75,26 +77,26 @@ class QLOTro extends Controller
         return redirect()->back() ->with('alert', 'Sửa thành công!');
     }
     //Quản lý sinh viên trọ (chủ trọ)
-    public function SinhVienTro(){
-        $pageSize = 4;
-        $idkhutro = 1;
+    public function SinhVienTro(Request $request){
+        $pageSize = 10;
+        $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
         $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
 
         return view('pages.user.hostelstudent',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
     }
 
-    public function ThongTinChuTro(){
-        $pageSize = 4;
-        $idkhutro = 1;
+    public function ThongTinChuTro(Request $request){
+        $pageSize = 1;
+        $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
         $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
         return view('pages.user.hostelinfo',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
     }
 
-    public function BaiVietChuTro(){
-        $pageSize = 4;
-        $idkhutro = 1;
+    public function BaiVietChuTro(Request $request){
+        $pageSize = 10;
+        $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
         $baiviet=baiviet::find($idkhutro)->paginate($pageSize);
 
@@ -159,4 +161,46 @@ class QLOTro extends Controller
         return view('pages.user.posts',['dsBaiViet'=>$dsBaiViet,'dsKhuTro'=>$dsKhuTro, 'pageSize'=>$pageSize]);
     }
 
+    public function TrangDoiMatKhau(){        
+        return view('pages.user.changepassword');
+    }
+
+    public function DoiMatKhau(Request $req){
+        $tentaikhoan = session('tendn');
+        $matkhaucu = $req->matkhaucu;
+        $matkhaumoi = $req->matkhaumoi;
+        $xacnhanmatkhaumoi = $req->xacnhanmatkhaumoi;
+        $danhsachtaikhoan = taikhoan::all();
+        foreach($danhsachtaikhoan as $item){
+            if($item->tendangnhap == $tentaikhoan)
+                $taikhoan = $item;
+        }
+        if($taikhoan!= null)
+        {
+            if(!Hash::check($matkhaumoi, $taikhoan->matkhau))
+            {
+                if(Hash::check($matkhaucu, $taikhoan->matkhau) && $matkhaumoi == $xacnhanmatkhaumoi)
+                    {
+                        $taikhoan->matkhau = Hash::make($matkhaumoi);
+                        $taikhoan->save();
+                        Session::flash('success', 'Đổi mật khẩu thành công!');
+                    }  
+                else if($matkhaumoi != $xacnhanmatkhaumoi){
+                    Session::flash('error', 'Mật khẩu mới và xác nhận mật khẩu mới không trùng nhau!');
+                }
+                else
+                {
+                    Session::flash('error', 'Mật khẩu cũ không hợp lệ!');
+                }             
+                return redirect()->back();
+            }
+            else{
+                Session::flash('error', 'Mật khẩu mới không được phép giống mật khẩu cũ!');
+                return redirect()->back();
+            }
+        }
+        else
+            return ('pages.login');        
+        
+    }
 }

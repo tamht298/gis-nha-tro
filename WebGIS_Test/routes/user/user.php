@@ -43,3 +43,6 @@ Route::get('danh-sach-tro', 'QLOTro@SinhVienTro')->name('danh-sach-tro');
 Route::get('thong-tin-chu-tro', 'QLOTro@ThongTinChuTro')->name('thong-tin-chu-tro');
 Route::get('danh-sach-bai-viet', 'QLOTro@BaiVietChuTro')->name('danh-sach-bai-viet');
 Route::get('trang-tin', 'QLOTro@BaiViet')->name('trang-tin');
+
+Route::get('doi-mat-khau','QLOTro@TrangDoiMatKhau')->name('doi-mat-khau');
+Route::post('doi-mat-khau','QLOTro@DoiMatKhau')->name('doi-mat-khau');

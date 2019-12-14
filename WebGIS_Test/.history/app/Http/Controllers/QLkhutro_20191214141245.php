@@ -85,7 +85,6 @@ class QLkhutro extends Controller
                     if($lg->quyen==0)
                     {
                         session()->put('tendn',$lg->tendangnhap);
-                        session()->put('makhutro',$lg->makhutro);
                         return redirect('trang-chu');
                     }
                     else if($lg->quyen==1)
