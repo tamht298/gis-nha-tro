@@ -8,7 +8,7 @@ use App\Otro;
 use App\baiviet;
 use App\khunhatro;
 use App\sinhvien;
-
+use Session;
 class QLOTro extends Controller
 {
     //
@@ -74,15 +74,31 @@ class QLOTro extends Controller
         $khutro->save();
         return redirect()->back() ->with('alert', 'Sửa thành công!');
     }
-    //Quản lý bài viết (chủ trọ)
-    public function QLChuTro(){
+    //Quản lý sinh viên trọ (chủ trọ)
+    public function SinhVienTro(){
         $pageSize = 4;
         $idkhutro = 1;
         $khunhatro = khunhatro::find($idkhutro);
-        $SVOTro=DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
+        $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
+
+        return view('pages.user.hostelstudent',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
+    }
+
+    public function ThongTinChuTro(){
+        $pageSize = 4;
+        $idkhutro = 1;
+        $khunhatro = khunhatro::find($idkhutro);
+        $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
+        return view('pages.user.hostelinfo',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
+    }
+
+    public function BaiVietChuTro(){
+        $pageSize = 4;
+        $idkhutro = 1;
+        $khunhatro = khunhatro::find($idkhutro);
         $baiviet=baiviet::find($idkhutro)->paginate($pageSize);
 
-        return view('pages.user.hostel',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'baiviet'=>$baiviet,'khunhatro'=>$khunhatro]);
+        return view('pages.user.hostelposts',['pageSize'=>$pageSize,'baiviet'=>$baiviet, 'khunhatro'=>$khunhatro]);
     }
 
     public function ThemBaiViet(Request $req)
@@ -97,8 +113,12 @@ class QLOTro extends Controller
         $baiviet->makhutro= $req->makhutro;
         $baiviet->trangthaiduyet= 0;
         $baiviet->save();
-
-        return redirect()->back() ->with('alert', 'Thêm thành công!');
+        if($baiviet){
+            Session::flash('success', 'Thêm thành công!');
+        }else {
+            Session::flash('error', 'Thêm thất bại!');
+        }
+        return redirect()->back();
 
     }
 
@@ -110,15 +130,23 @@ class QLOTro extends Controller
         $baiviet->makhutro= $req->makhutro;
 
         $baiviet->save();
-
-        return redirect()->back() ->with('alert', 'Sửa thành công!');
+        if($baiviet){
+            Session::flash('success', 'Cập nhật thành công!');
+        }else {
+            Session::flash('error', 'Cập nhật thất bại!');
+        }
+        return redirect()->back();
     }
 
     public function XoaBaiViet($id)
     {
-        baiviet::destroy($id);
-
-        return redirect()->back()->with('alert', 'Xóa dữ liệu thành công!');
+        $baiviet = baiviet::destroy($id);
+        if($baiviet){
+            Session::flash('success', 'Xóa thành công!');
+        }else {
+            Session::flash('error', 'Xóa thất bại!');
+        }
+        return redirect()->back();
     }
 
     //trang bai viet

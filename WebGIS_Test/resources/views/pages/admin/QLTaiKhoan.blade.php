@@ -1,12 +1,5 @@
 ﻿@extends('layouts.master-admin')
 @section('master-admin')
-<script>
-    var msg = '{{Session::get('alert')}}';
-    var exist = '{{Session::has('alert')}}';
-    if(exist){
-      alert(msg);
-    }
-</script>
 
 <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
@@ -190,7 +183,7 @@
                                         <tr>
                                             <th scope="col">STT</th>
                                             <th scope="col">Tên tài khoản</th>
-                                            <th scope="col">Mã khu trọ</th>
+                                            <th scope="col">Tên khu trọ</th>
 
                                             <th scope="col">Quyền</th>
                                             <th scope="col">Thao tác</th>
@@ -205,7 +198,13 @@
                                         <tr>
                                             <th scope="row">{{$i++}}</th>
                                             <td>{{$item->tendangnhap}}</td>
-                                            <td>{{$item->makhutro}}</td>
+                                            <td>
+                                                @foreach($khunhatro as $knt)                                    
+                                                @if($knt->gid == $item->makhutro)
+                                                    {{$knt->tennhatro}}                                           
+                                                @endif
+                                                @endforeach
+                                            </td>
 
                                             <td>{{$item->quyen===0 ? 'Chủ trọ' : 'Admin'}}</td>
                                             <td>

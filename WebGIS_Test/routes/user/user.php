@@ -35,9 +35,11 @@ Route::post('XoaDSSVTro/{id}', 'QLOTro@XoaDSSVTro')->name('XoaDSSVTro');
 
 Route::post('SuaTTChuTro/{gid}', 'QLOTro@SuaTTChuTro')->name('SuaTTChuTro');
 
-Route::get('quan-ly-tro', 'QLOTro@QLChuTro')->name('quan-ly-tro');
+
 Route::post('ThemBaiViet', 'QLOTro@ThemBaiViet')->name('ThemBaiViet');
 Route::post('SuaBaiViet/{id}', 'QLOTro@SuaBaiViet')->name('SuaBaiViet');
 Route::post('XoaBaiViet/{id}', 'QLOTro@XoaBaiViet')->name('XoaBaiViet');
-
+Route::get('danh-sach-tro', 'QLOTro@SinhVienTro')->name('danh-sach-tro');
+Route::get('thong-tin-chu-tro', 'QLOTro@ThongTinChuTro')->name('thong-tin-chu-tro');
+Route::get('danh-sach-bai-viet', 'QLOTro@BaiVietChuTro')->name('danh-sach-bai-viet');
 Route::get('trang-tin', 'QLOTro@BaiViet')->name('trang-tin');
