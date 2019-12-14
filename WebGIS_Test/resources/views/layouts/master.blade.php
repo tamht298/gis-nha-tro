@@ -11,11 +11,7 @@
     <link rel="stylesheet" href="{{asset('template/css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
-    <link rel="stylesheet" href="./resources/ol.css" />
-    <link rel="stylesheet" href="resources/horsey.min.css">
-    <link rel="stylesheet" href="resources/ol3-search-layer.min.css">
-    <link rel="stylesheet" href="./resources/ol3-layerswitcher.css">
-    <link rel="stylesheet" href="./resources/qgis2web.css">
+    
     <style>
         html, body {
             background-color: #ffffff;
@@ -27,6 +23,13 @@
                 border: none;
         }
         </style>
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css" />
+        <link rel="stylesheet" type="text/css" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/MarkerCluster.css" />
+        <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
         <style>
         html, body, #map {
             width: 100%;
