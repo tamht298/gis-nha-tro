@@ -6,7 +6,6 @@ use App\khunhatro;
 use App\dangnhap;
 use DB;
 use Hash;
-use Session;
 class QLkhutro extends Controller
 {
     //

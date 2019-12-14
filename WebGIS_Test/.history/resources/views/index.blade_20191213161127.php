@@ -6,7 +6,18 @@
         <div class="container">
             <div class="row mt-3 mb-4">
                 <div class="col-md-4 m-top-ward">
-                    
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="" class="mr-1 text-label">Chọn phường</label>
+                            <select class="custom-select" name="" id="">
+                                <option selected>Select one</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="row justify-content-center ">

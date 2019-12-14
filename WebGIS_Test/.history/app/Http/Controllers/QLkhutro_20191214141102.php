@@ -6,7 +6,6 @@ use App\khunhatro;
 use App\dangnhap;
 use DB;
 use Hash;
-use Session;
 class QLkhutro extends Controller
 {
     //
@@ -39,7 +38,7 @@ class QLkhutro extends Controller
         $dsNhatro->tenchutro=$request->tenchutro;
         $dsNhatro->sodienthoai=$request->sodienthoai;
         $dsNhatro->save();
-        if($dsNhatro){
+        if($baiviet){
             Session::flash('success', 'Cập nhật khu trọ thành công!');
         }else {
 		Session::flash('error', 'Cập nhật thất bại!');
