@@ -18,7 +18,7 @@ class QLOTro extends Controller
         $pageSize = 4;
         $dsOTro=DB::table('otro')->where('mssv', $req->getmssv)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
         $student = sinhvien::find($req->getmssv);
-        
+
         return view('pages.admin.ThongTinTro',['dsOTro'=>$dsOTro, 'pageSize'=>$pageSize, 'student'=>$student]);
     }
 
@@ -105,7 +105,7 @@ class QLOTro extends Controller
 
     public function ThemBaiViet(Request $req)
     {
-       
+
         $baiviet = new baiviet();
 
         $baiviet->tieude= $req->tieude;
@@ -153,8 +153,9 @@ class QLOTro extends Controller
 
     //trang bai viet
     public function BaiViet(){
-        $pageSize = 2;
-        $dsBaiViet=DB::table('baiviet')->paginate($pageSize);
+        $pageSize = 4;
+        $dsBaiViet=DB::table('baiviet')->where('trangthaiduyet', 2)->paginate($pageSize);
+
         $dsKhuTro =khunhatro::all();
 
         return view('pages.user.posts',['dsBaiViet'=>$dsBaiViet,'dsKhuTro'=>$dsKhuTro, 'pageSize'=>$pageSize]);

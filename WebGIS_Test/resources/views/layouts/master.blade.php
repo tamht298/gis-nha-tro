@@ -17,29 +17,25 @@
     <link rel="stylesheet" href="./resources/ol3-layerswitcher.css">
     <link rel="stylesheet" href="./resources/qgis2web.css">
     <style>
-    html,
-    body {
-        background-color: #ffffff;
+        html, body {
+            background-color: #ffffff;
 
-    }
-
-    li.dropdown:hover>ul.dropdown-menu {
-        color: red;
-        display: block;
-        border: none;
-    }
-    </style>
-    <style>
-    html,
-    body,
-    #map {
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-    }
-    </style>
-    <title></title>
+        }
+        li.dropdown:hover > ul.dropdown-menu {
+                color: red;
+                display: block;
+                border: none;
+        }
+        </style>
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
 </head>
 
 <body class="bg-transparent">
@@ -101,10 +97,9 @@
                             @else
                             <li class="nav-item mr-1 p-1" style="position: relative; left:220%">
 
-                                <a class="nav-link text-white navbar-text" style="margin-left: -150%;" href="login"><i
-                                        class="fas fa-user"></i> Đăng nhập </a>
+                            <a class="nav-link text-white navbar-text" style="margin-left: -150%;" href="login"><i  class="fas fa-user"></i> Đăng nhập </a>
 
-                            </li>
+                        </li>
                             @endif
                         </ul>
                     </div>
@@ -157,6 +152,7 @@
 
     </footer>
     <!-- Footer -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
@@ -169,21 +165,11 @@
     <script src="{{asset('template/js/scroll-to-top.js')}}">
     </script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script>
-    CKEDITOR.replace('editor1');
-    </script>
-    <script>
-    CKEDITOR.replace('editor2');
-    </script>
-    <script>
-    CKEDITOR.replace('editor3');
-    </script>
-    <script>
-    CKEDITOR.replace('editor4');
-    </script>
-    <script>
-    CKEDITOR.replace('editor5');
-    </script>
+    <script>CKEDITOR.replace('editor1'); </script>
+    <script>CKEDITOR.replace('editor2'); </script>
+    <script>CKEDITOR.replace('editor3'); </script>
+    <script>CKEDITOR.replace('editor4'); </script>
+    <script>CKEDITOR.replace('editor5'); </script>
+    <script src="template/js/fade-alert.js"></script>
 </body>
-
 </html>
