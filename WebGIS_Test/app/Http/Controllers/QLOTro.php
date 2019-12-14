@@ -77,9 +77,9 @@ class QLOTro extends Controller
         return redirect()->back() ->with('alert', 'Sửa thành công!');
     }
     //Quản lý sinh viên trọ (chủ trọ)
-    public function SinhVienTro(){
+    public function SinhVienTro(Request $request){
         $pageSize = 4;
-        $idkhutro = 1;
+        $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
         $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
 
