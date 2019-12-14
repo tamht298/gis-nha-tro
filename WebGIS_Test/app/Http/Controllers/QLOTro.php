@@ -22,10 +22,10 @@ class QLOTro extends Controller
         return view('pages.admin.ThongTinTro',['dsOTro'=>$dsOTro, 'pageSize'=>$pageSize, 'student'=>$student]);
     }
 
-    public function DSSVTro()
+    public function DSSVTro(Request $req)
     {
         $pageSize = 4;
-        $idkhutro = 1;
+        $idkhutro = $request->session()->get('makhutro');
         $SVOTro=DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid','khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
         //$SVOTro = OTro::paginate($pageSize);
         return view('pages.user.hostel',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize]);
@@ -78,7 +78,7 @@ class QLOTro extends Controller
     }
     //Quản lý sinh viên trọ (chủ trọ)
     public function SinhVienTro(Request $request){
-        $pageSize = 4;
+        $pageSize = 10;
         $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
         $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
@@ -86,17 +86,17 @@ class QLOTro extends Controller
         return view('pages.user.hostelstudent',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
     }
 
-    public function ThongTinChuTro(){
-        $pageSize = 4;
-        $idkhutro = 1;
+    public function ThongTinChuTro(Request $request){
+        $pageSize = 1;
+        $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
         $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
         return view('pages.user.hostelinfo',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
     }
 
-    public function BaiVietChuTro(){
-        $pageSize = 4;
-        $idkhutro = 1;
+    public function BaiVietChuTro(Request $request){
+        $pageSize = 10;
+        $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
         $baiviet=baiviet::find($idkhutro)->paginate($pageSize);
 
