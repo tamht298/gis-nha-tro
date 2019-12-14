@@ -72,7 +72,7 @@
 
                             <li class="nav-item mr-1 p-1">
                                 <a class="nav-link text-white navbar-text" href="lien-he"><i
-                                        class="fas fa-address-book"></i>Liên Hệ</a>
+                                        class="fas fa-address-book"></i> Liên Hệ</a>
                             </li>
                             @if(session()->has('tendn'))
                             <li class="nav-item mr-1 p-1 dropdown">
@@ -98,9 +98,9 @@
                                         class="fas fa-power-off"></i> thoát </a>
                             </li>
                             @else
-                            <li class="nav-item mr-1 p-1" style="position: relative; left:220%">
+                            <li class="nav-item mr-1 p-1">
 
-                            <a class="nav-link text-white navbar-text" style="margin-left: -150%;" href="login"><i  class="fas fa-user"></i> Đăng nhập </a>
+                            <a class="nav-link text-white navbar-text" href="login"><i  class="fas fa-user"></i> Đăng nhập </a>
 
                         </li>
                             @endif
