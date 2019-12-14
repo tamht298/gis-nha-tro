@@ -195,6 +195,10 @@
                                     <td scope="row" class="text-wrap" style="width: 20em;" >{{$nhatro->diachi}}</td>
                                     <td scope="row">{{$nhatro->sodienthoai}}</td>
                                     <td scope="row">
+                                        <span data-toggle="modal" data-target="#{{$xoa}}">
+                                            <a href="#" class="text-danger mr-3" data-toggle="tooltip"
+                                                data-placement="right" data-html="true" title="Xem danh sách"><i class="fas fa-th-list text-primary"></i></a>
+                                        </span>
                                         <span data-toggle="modal" data-target="#{{$sua}}">
                                             <a href="#" class="text-success" data-toggle="tooltip" data-placement="left"
                                                 data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
