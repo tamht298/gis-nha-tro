@@ -8,7 +8,9 @@ use App\Otro;
 use App\baiviet;
 use App\khunhatro;
 use App\sinhvien;
+use App\taikhoan;
 use Session;
+use Hash;
 class QLOTro extends Controller
 {
     //
@@ -158,4 +160,39 @@ class QLOTro extends Controller
         return view('pages.user.posts',['dsBaiViet'=>$dsBaiViet,'dsKhuTro'=>$dsKhuTro, 'pageSize'=>$pageSize]);
     }
 
+    public function TrangDoiMatKhau(){        
+        return view('pages.user.changepassword');
+    }
+
+    public function DoiMatKhau(Request $req){
+        $tentaikhoan = session('tendn');
+        $matkhaucu = $req->matkhaucu;
+        $matkhaumoi = $req->matkhaumoi;
+        $xacnhanmatkhaumoi = $req->xacnhanmatkhaumoi;
+        $danhsachtaikhoan = taikhoan::all();
+        foreach($danhsachtaikhoan as $item){
+            if($item->tendangnhap == $tentaikhoan)
+                $taikhoan = $item;
+        }
+        if($taikhoan!= null)
+        {
+            if(Hash::check($matkhaucu, $taikhoan->matkhau) && $matkhaumoi == $xacnhanmatkhaumoi)
+                {
+                    $taikhoan->matkhau = Hash::make($matkhaumoi);
+                    $taikhoan->save();
+                    Session::flash('success', 'Đổi mật khẩu thành công!');
+                }  
+            else if($matkhaumoi != $xacnhanmatkhaumoi){
+                Session::flash('error', 'Mật khẩu mới và xác nhận mật khẩu mới không trùng nhau!');
+            }
+            else
+            {
+                Session::flash('error', 'Mật khẩu cũ không hợp lệ!');
+            }
+            return redirect()->back();
+        }
+        else
+            return ('pages.login');        
+        
+    }
 }
