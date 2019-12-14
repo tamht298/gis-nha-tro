@@ -96,7 +96,7 @@ class QLOTro extends Controller
 
     public function BaiVietChuTro(Request $request){
         $pageSize = 10;
-        $idkhutro = $request->session()->get('makhutro');
+        $idkhutro = 1;
         $khunhatro = khunhatro::find($idkhutro);
         $baiviet=baiviet::find($idkhutro)->paginate($pageSize);
 
@@ -112,7 +112,7 @@ class QLOTro extends Controller
         $baiviet->noidung= $req->noidung;
         $date = date("Y-m-d H:i:s");
         $baiviet->ngaytao= $date;
-        $baiviet->makhutro= $req->makhutro;
+        $baiviet->makhutro= $req->session()->get('makhutro');
         $baiviet->trangthaiduyet= 0;
         $baiviet->save();
         if($baiviet){
@@ -153,7 +153,7 @@ class QLOTro extends Controller
 
     //trang bai viet
     public function BaiViet(){
-        $pageSize = 4;
+        $pageSize = 10;
         $dsBaiViet=DB::table('baiviet')->where('trangthaiduyet', 2)->paginate($pageSize);
 
         $dsKhuTro =khunhatro::all();
