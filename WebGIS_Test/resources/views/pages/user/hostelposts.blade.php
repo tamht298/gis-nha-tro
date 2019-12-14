@@ -1,19 +1,20 @@
 @extends('layouts.master')
 @section('master')
 <div class="container" style="color: #000000;">
-    <div class="dashboard-wrapper">
+    <div class="dashboard-wrapper mt-5">
         <div class="dashboard-ecommerce">
-            <div class="container-fluid dashboard-content ">
+            <div class="container-fluid dashboard-content">
 
-                <h3>Quản Lý Bài Viết</h3>
+                
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="row float-left" style="font-size: 20px;">
-
-                        </div>
-                        <div class="row float-right bg-success mr-3 mt-2">
-                            <button class="btn btn-success" data-toggle="modal" data-target="#addModalBaiViet"><i class="fa fa-plus"></i> Thêm</button>
+                      <div class="row">
+                          <div class="col-md-6 mt-2 ">
+                            <h3>Quản Lý Bài Viết</h3>
+                          </div>
+                          <div class="col-md-6">
+                            <button class="btn btn-success mt-2 float-right mr-3" data-toggle="modal" data-target="#addModalBaiViet"><i class="fa fa-plus"></i> Thêm</button>
 
                             <!-- Modal thêm -->
 
@@ -53,13 +54,9 @@
                                     </div>
                                 </div>
                             </div>
+                             <!-- Search bar -->
 
-                            <!-- End modal thêm -->
-
-                        </div>
-                        <!-- Search bar -->
-
-                        <div class="navbar-nav col-3 float-right mt-2 mr-5">
+                        <div class="navbar-nav float-right mt-2 mr-5">
                             <div id="custom-search" class="top-search-bar">
                                 <input class="form-control" type="text" placeholder="Search..">
 
@@ -67,6 +64,18 @@
                         </div>
 
                         <!-- End search bar -->
+
+                            <!-- End modal thêm -->
+                          </div>
+                       
+                        
+                      </div>
+
+                        
+                            
+
+                        
+                       
                     </div>
 
                     <div class="card-body">

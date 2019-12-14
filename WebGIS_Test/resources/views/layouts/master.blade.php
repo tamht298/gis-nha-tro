@@ -87,13 +87,13 @@
 
 
                             </li>
-                            <li class="nav-item mr-1 p-1" style="position: relative; left:60%">
+                            <li class="nav-item mr-1 p-1" style="position: relative;">
                                 <a class="nav-link text-white navbar-text" href="#"> Xin chào, {{session('tendn')}} </a>
                             </li>
-                            <li class="nav-item mr-1 p-1" style="position: relative; left:60%">
+                            <li class="nav-item mr-1 p-1" style="position: relative;">
                                 <a class="nav-link text-white navbar-text" href="doi-mat-khau">Đổi mật khẩu</a>
                             </li>
-                            <li class="nav-item mr-1 p-1" style="position: relative; left:60%">
+                            <li class="nav-item mr-1 p-1" style="position: relative;">
                                 <a class="nav-link text-white navbar-text" href="thoat"> <i
                                         class="fas fa-power-off"></i> thoát </a>
                             </li>
