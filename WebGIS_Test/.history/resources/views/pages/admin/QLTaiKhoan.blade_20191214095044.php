@@ -1,5 +1,4 @@
 ﻿@extends('layouts.master-admin')
-@section('title','Quản lý tài khoản')
 @section('master-admin')
 
 <div class="nav-left-sidebar sidebar-dark">
@@ -68,7 +67,7 @@
                             <div class="row float-left" style="font-size: 20px;">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a class="text-primary" href="Dashboard.html">Dashboard</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Quản lý tài khoản</li>
                                     </ol>
                                 </nav>
@@ -183,7 +182,7 @@
                                 <table class="table table-striped">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col">#</th>
+                                            <th scope="col" class="text-center">#</th>
                                             <th scope="col">Tên tài khoản</th>
                                             <th scope="col">Tên khu trọ</th>
 
@@ -198,7 +197,7 @@
                                         $sua = $item->id."sua";
                                         $xoa = $item->id."xoa"; ?>
                                         <tr>
-                                            <th scope="row">{{$i++ + ($taikhoan->currentPage() -1)* $pageSize }}</th>
+                                            <th scope="row" class="text-center">{{$i++ + ($taikhoan->currentPage() -1)* $pageSize }}</th>
                                             <td>{{$item->tendangnhap}}</td>
                                             <td>
                                                 @foreach($khunhatro as $knt)

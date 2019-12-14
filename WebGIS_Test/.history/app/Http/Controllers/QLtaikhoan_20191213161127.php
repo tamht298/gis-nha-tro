@@ -17,16 +17,15 @@ class QLtaikhoan extends Controller
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function DanhsachTK(){
-        $pageSize=4;
-        $taikhoan = taikhoan::paginate($pageSize);
+        $taikhoan = taikhoan::all();
         $khunhatro = khunhatro::all();
-        return view('pages.admin.QLTaiKhoan',['taikhoan'=>$taikhoan, 'pageSize'=>$pageSize],['khunhatro'=>$khunhatro]);
+        return view('pages.admin.QLTaiKhoan',['taikhoan'=>$taikhoan],['khunhatro'=>$khunhatro]);
     }
 
     // Them TK
     public function ThemTK(Request $req){
             $taikhoan = new taikhoan();
-
+            
             $taikhoan->tendangnhap = $req->tendangnhap;
             $taikhoan->matkhau = Hash::make($req->matkhau);
             $date = date("Y-m-d H:i:s");
@@ -41,7 +40,7 @@ class QLtaikhoan extends Controller
                 Session::flash('error', 'Thêm thất bại!');
             }
             return redirect()->back();
-
+        
 
     }
 
@@ -59,7 +58,7 @@ class QLtaikhoan extends Controller
             Session::flash('error', 'Cập nhật tài khoản thất bại!');
         }
 
-        return redirect()->back();
+        return redirect()->back();   
     }
     public function XoaTK($id){
         $xoataikhoan = taikhoan::destroy($id);
@@ -67,7 +66,7 @@ class QLtaikhoan extends Controller
 		    Session::flash('success', 'Xóa bài viết thành công!');
         }else {
             Session::flash('error', 'Xóa thất bại!');
-        }
+        }    
         return redirect()->back();
     }
 }

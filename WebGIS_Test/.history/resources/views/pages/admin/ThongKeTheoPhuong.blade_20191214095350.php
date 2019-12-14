@@ -1,5 +1,5 @@
 ﻿@extends('layouts.master-admin')
-@section('title','Thống kê theo chủ trọ')
+@section('title','Quản lý bài viết')
 @section('master-admin')
 <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
@@ -38,10 +38,10 @@
                                 <div id="submenu-1-2" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="thong-ke-theo-phuong">Thống kê theo phường</a>
+                                            <a class="nav-link active" href="#">Thống kê theo phường</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="#">Thống kê theo chủ trọ</a>
+                                            <a class="nav-link" href="thong-ke-theo-chu-tro">Thống kê theo chủ trọ</a>
                                         </li>
 
                                     </ul>
@@ -56,7 +56,6 @@
                 </nav>
             </div>
 </div>
-
 <div class="dashboard-wrapper">
             <div class="dashboard-ecommerce">
                 <div class="container-fluid dashboard-content ">
@@ -68,19 +67,21 @@
                             <div class="row float-left" style="font-size: 20px;">
                                     <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                              <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Dashboard</a></li>
-                                              <li class="breadcrumb-item active" aria-current="page">Thống kê theo chủ trọ</li>
+                                              <li class="breadcrumb-item"><a class="text-primary" href="Dashboard.html">Dashboard</a></li>
+                                              <li class="breadcrumb-item active" aria-current="page">Thống kê theo phường</li>
                                             </ol>
                                           </nav>
                             </div>
                             <div class="row float-right mr-3">
-                                <div id="custom-search" class="top-search-bar">
-                                        <input class="form-control" type="text" placeholder="Search..">
-                                    </div>
+                                    <div id="custom-search" class="top-search-bar">
+                                            <input class="form-control" type="text" placeholder="Search..">
+                                        </div>
                             </div>
                         </div>
-
+                        <!-- <div class="table table-reponsive"> -->
                             <div class="card-body">
+
+
                                 <!-- <div class="row mb-5">
                                     <div class="col-3 ml-3">
 
@@ -97,54 +98,38 @@
                                     </div>
                                 </div> -->
                                 <div class="row table-responsive mx-auto" style="font-size: 16px">
-                                    <table class="table table-striped text-center">
+                                    <table class="table table-striped">
                                         <thead class="thead-dark">
-                                            <tr >
-                                                <th scope="col">#</th>
-                                                <th scope="col">Mã khu trọ</th>
-                                                <th scope="col">Tên nhà trọ</th>
-                                                <th scope="col" class="text-left">Địa chỉ</th>
-                                                <th scope="col">Sinh viên đang trọ</th>
+                                            <tr>
+                                                <th scope="col" class="text-center">#</th>
+                                                <th scope="col" class="text-center">Mã phường</th>
+                                                <th scope="col">Tên phường</th>
+                                                <th scope="col" class="text-center">Số lượng nhà trọ</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <?php
                                                 $i=1
                                             ?>
-                                    @foreach ($ds2 as $item )
+                                    @foreach ($ds as $item )
                                             <tr>
-                                                <th scope="row">{{$i++}}</th>
-                                                <td>{{$item->gid}}</td>
-                                                <td>{{$item->tennhatro}}</td>
-                                                <td class="text-wrap text-left" style="width: 20em;">{{$item->diachi}}</td>
-                                                <td>{{$item->sl}}</td>
+                                                <th scope="row" class="text-center">{{$i++}}</th>
+                                                <td class="text-center">{{$item->gid}}</td>
+                                                <td>{{$item->tenphuong}}</td>
+                                                <td class="text-center">{{$item->sl}}</td>
+
                                             </tr>
-                                    @endforeach
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
 
+                            </div>
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <!-- div class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
-                             Copyright © 2019 Team 01. All rights reserved.
-                        </div>
-                    </div>
-
-                </div>
-            </div> -->
-            <!-- ============================================================== -->
-            <!-- end footer -->
-            <!-- ============================================================== -->
-
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
@@ -163,4 +148,3 @@
             <!-- ============================================================== -->
 </div>
 @endsection
-

@@ -1,5 +1,5 @@
 ﻿@extends('layouts.master-admin')
-
+@section('title','')
 @section('master-admin')
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">

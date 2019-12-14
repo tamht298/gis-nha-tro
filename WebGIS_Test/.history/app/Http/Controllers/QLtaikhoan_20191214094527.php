@@ -17,10 +17,10 @@ class QLtaikhoan extends Controller
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function DanhsachTK(){
-        $pageSize=4;
-        $taikhoan = taikhoan::paginate($pageSize);
+        
+        $taikhoan = taikhoan::all()->paginate();
         $khunhatro = khunhatro::all();
-        return view('pages.admin.QLTaiKhoan',['taikhoan'=>$taikhoan, 'pageSize'=>$pageSize],['khunhatro'=>$khunhatro]);
+        return view('pages.admin.QLTaiKhoan',['taikhoan'=>$taikhoan],['khunhatro'=>$khunhatro]);
     }
 
     // Them TK

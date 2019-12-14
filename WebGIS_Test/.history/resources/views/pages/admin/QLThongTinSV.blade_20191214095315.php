@@ -1,5 +1,5 @@
 ﻿@extends('layouts.master-admin')
-@section('title','Quản lý sinh viên')
+@section('title','Quản lý bài viết')
 @section('master-admin')
 <script>
     var msg = '{{Session::get('alert')}}';
@@ -77,7 +77,7 @@
                     <div class="row float-left" style="font-size: 20px;">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Dashboard</a>
+                                <li class="breadcrumb-item"><a class="text-primary" href="Dashboard.html">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">Quản lý thông tin sinh
                                     viên</li>

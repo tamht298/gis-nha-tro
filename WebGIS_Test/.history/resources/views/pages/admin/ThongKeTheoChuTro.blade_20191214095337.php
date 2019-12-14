@@ -1,5 +1,5 @@
 ﻿@extends('layouts.master-admin')
-@section('title','Thống kê theo chủ trọ')
+@section('title','Thống kê ')
 @section('master-admin')
 <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
@@ -68,7 +68,7 @@
                             <div class="row float-left" style="font-size: 20px;">
                                     <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                              <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Dashboard</a></li>
+                                              <li class="breadcrumb-item"><a class="text-primary" href="Dashboard.html">Dashboard</a></li>
                                               <li class="breadcrumb-item active" aria-current="page">Thống kê theo chủ trọ</li>
                                             </ol>
                                           </nav>

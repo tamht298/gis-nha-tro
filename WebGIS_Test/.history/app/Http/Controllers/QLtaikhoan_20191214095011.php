@@ -20,7 +20,7 @@ class QLtaikhoan extends Controller
         $pageSize=4;
         $taikhoan = taikhoan::paginate($pageSize);
         $khunhatro = khunhatro::all();
-        return view('pages.admin.QLTaiKhoan',['taikhoan'=>$taikhoan, 'pageSize'=>$pageSize],['khunhatro'=>$khunhatro]);
+        return view('pages.admin.QLTaiKhoan',['taikhoan'=>$taikhoan, 'pageSize'=>$pageSize],['khunhatro'=>$khunhatro], []);
     }
 
     // Them TK
