@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\khunhatro;
 use App\dangnhap;
+use App\sinhvien;
+use App\OTro;
 use DB;
 use Hash;
 use Session;
@@ -100,6 +102,18 @@ class QLkhutro extends Controller
         Session::flash('error', 'Đăng nhập thất bại!');
         return redirect('login');
   //       return "<script>alert('Dang nhap that bai'); window.location='login'</script>";
+    }
+
+    public function DsSinhVienOtro($idChuTro){
+        // code
+        $dsSVOtro=DB::table('otro')->
+        join('khunhatro_tdm_point','otro.makhutro','=','khunhatro_tdm_point.gid')->
+        join('sinhvien','otro.mssv','=','sinhvien.mssv')->
+        where('khunhatro_tdm_point.gid','=',$idChuTro)->
+        select('sinhvien.ho','sinhvien.ten','sinhvien.mssv','sinhvien.dienthoai','sinhvien.ngaysinh',
+        'sinhvien.gioitinh')->get();
+        print($dsSVOtro);
+        return view('pages.admin.QLKhuTro',compact('dsSVOtro'));
     }
     public function thoat(){
         session()->forget('tendn');

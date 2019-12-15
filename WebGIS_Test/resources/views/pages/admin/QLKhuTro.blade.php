@@ -111,7 +111,8 @@
                                             <div class="form-group">
                                                 <label class="col-form-label font-weight-bold">Địa chỉ<span
                                                         class="text-danger"> (*)</span></label>
-                                                <textarea type="text" name="diachi" class="form-control" placeholder="Thông tin địa chỉ khu trọ"></textarea>
+                                                <textarea type="text" name="diachi" class="form-control"
+                                                    placeholder="Thông tin địa chỉ khu trọ"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-form-label font-weight-bold">Số điện
@@ -170,7 +171,7 @@
                         <table class="table table-striped">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col" >#</th>
+                                    <th scope="col">#</th>
                                     <th scope="col" class="center">Mã khu trọ</th>
                                     <th scope="col">Tên khu trọ</th>
                                     <th scope="col">Chủ trọ</th>
@@ -186,15 +187,21 @@
                                 @foreach ($dsNhatro as $nhatro )
                                 <?php $them = $nhatro->gid."them";
                                         $sua = $nhatro->gid."$them";
-                                        $xoa = $nhatro->gid."xoa"; ?>
+                                        $xoa = $nhatro->gid."xoa";
+                                        $dssvotro=$nhatro->gid."dssvotro"?>
                                 <tr>
                                     <td scope="row">{{$i++}}</th>
                                     <td scope="row" class="text-center">{{$nhatro->gid}}</td>
                                     <td scope="row">{{$nhatro->tennhatro}}</td>
                                     <td scope="row">{{$nhatro->tenchutro}}</td>
-                                    <td scope="row" class="text-wrap" style="width: 20em;" >{{$nhatro->diachi}}</td>
+                                    <td scope="row" class="text-wrap" style="width: 20em;">{{$nhatro->diachi}}</td>
                                     <td scope="row">{{$nhatro->sodienthoai}}</td>
                                     <td scope="row">
+                                        <span data-toggle="modal" data-target="#{{$dssvotro}}">
+                                            <a href="" data-url="{{ route('DSSVotro',['gid' => $nhatro->gid])}}" class="text-danger mr-3" data-toggle="tooltip"
+                                                data-placement="right" data-html="true" title="Xem danh sách"><i
+                                                    class="fas fa-th-list text-primary"></i></a>
+                                        </span>
                                         <span data-toggle="modal" data-target="#{{$sua}}">
                                             <a href="#" class="text-success" data-toggle="tooltip" data-placement="left"
                                                 data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
@@ -204,7 +211,50 @@
                                                 data-placement="right" data-html="true" title="Xóa"><i
                                                     class="fa fa-trash-alt fa-lg"></i></a>
                                         </span>
+                                        {{-- show list --}}
+                                        <div class="modal fade" id="{{$dssvotro}}" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table class="table">
+                                                            <thead class="thead-dark">
+                                                              <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">First</th>
+                                                                <th scope="col">Last</th>
+                                                                <th scope="col">Handle</th>
 
+                                                              </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                              {{-- @foreach ($dsSvOtro as $dssv)
+                                                              <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                              </tr>
+                                                              @endforeach --}}
+                                                            </tbody>
+                                                          </table>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Đóng</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <!-- Modal sửa -->
                                         <div class="modal fade" id="{{$sua}}" tabindex="-1" role="dialog"
                                             aria-labelledby="editModalLabel" aria-hidden="true">
@@ -245,7 +295,8 @@
                                                             <div class="form-group">
                                                                 <label class="col-form-label font-weight-bold">Địa
                                                                     chỉ:</label>
-                                                                    <textarea class="form-control" name="diachi">{{$nhatro->diachi}}</textarea>
+                                                                <textarea class="form-control"
+                                                                    name="diachi">{{$nhatro->diachi}}</textarea>
 
                                                             </div>
                                                             <div class="form-group">
@@ -273,8 +324,9 @@
                                             aria-labelledby="deleteModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
-                                                    <form action="{{ route('XoaNT',['gid' => $nhatro->gid])}}" method="post">
-                                                            @csrf
+                                                    <form action="{{ route('XoaNT',['gid' => $nhatro->gid])}}"
+                                                        method="post">
+                                                        @csrf
                                                         <div class="modal-header">
                                                             <h2 class="modal-title" id="deleteModalLabel">Xóa Thông
                                                                 Tin Khu Trọ</h3>
@@ -285,13 +337,13 @@
                                                         </div>
 
 
-                                                    <div class="modal-footer">
-                                                        <input type="submit" class="btn btn-danger" value="Xóa">
-                                                        <button type="button" class="btn btn-default float-left"
-                                                            data-dismiss="modal">Hủy</button>
+                                                        <div class="modal-footer">
+                                                            <input type="submit" class="btn btn-danger" value="Xóa">
+                                                            <button type="button" class="btn btn-default float-left"
+                                                                data-dismiss="modal">Hủy</button>
 
-                                                    </div>
-                                                </form>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -324,4 +376,7 @@
     <!-- ============================================================== -->
 </div>
 </div>
+<script>
+    
+</script>
 @endsection

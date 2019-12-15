@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{asset('template/css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
-
+    
     <style>
         html, body {
             background-color: #ffffff;
@@ -109,11 +109,11 @@
                 </nav>
             </div>
         </div>
-
+        
     </header>
     <div class="jumbotron content mt-6">
         @yield('master')
-
+        
     </div>
     <!-- Footer -->
     <footer class="page-footer font-small blue pt-4" style="background-color: rgb(66, 135, 245); color: #fff;">
@@ -165,7 +165,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    
     <script src="{{asset('template/js/scroll-to-top.js')}}">
     </script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
