@@ -46,9 +46,8 @@
 
                                         </div>
                                         <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                                             <input type="submit" class="btn btn-success" value="Thêm">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-
                                         </div>
 
                                         </form>
@@ -102,11 +101,10 @@
                         </div>
                         @endif
                         <div class="row table-responsive mx-auto" style="font-size: 16px">
-                            @if($baiviet)
                             <table class="table table-striped">
                                 <thead style="background: #3CADF1; color: antiquewhite">
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">STT</th>
                                         <th scope="col">Tiêu đề</th>
                                         <th scope="col">Nội dung</th>
                                         <th scope="col">Ngày tạo</th>
@@ -118,7 +116,6 @@
                                 <tbody>
                                     <?php $i = 1;
                                     $y = 2 ?>
-
                                     @foreach ($baiviet as $item)
 
                                     <?php
@@ -165,10 +162,10 @@
 
                                         <td>
                                             <span data-toggle="modal" data-target="#{{$suabv}}">
-                                                <a href="#" class="text-success mr-1" data-toggle="tooltip" data-placement="left" data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
+                                                <a href="#" class="text-success" data-toggle="tooltip" data-placement="left" data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
                                             </span>
                                             <span data-toggle="modal" data-target="#{{$xoabv}}">
-                                                <a href="#" class="text-danger" data-toggle="tooltip" data-placement="right" data-html="true" title="Xóa"><i class="fa fa-trash-alt fa-lg"></i></a>
+                                                <a href="#" class="text-danger ml-3" data-toggle="tooltip" data-placement="right" data-html="true" title="Xóa"><i class="fa fa-trash-alt fa-lg"></i></a>
                                             </span>
 
                                             <!-- Modal sửa -->
@@ -200,9 +197,8 @@
 
                                                         </div>
                                                         <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                                                             <input type="submit" class="btn btn-success" value="Cập nhật">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-
                                                         </div>
                                                         </form>
                                                     </div>
@@ -229,7 +225,7 @@
                                                             <form action="{{ route('XoaBaiViet',['id' => $item->id])}}" method="post">
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">Xóa</button>
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
 
                                                             </form>
                                                         </div>
@@ -242,18 +238,12 @@
                                     </tr>
 
                                     @endforeach
-
                                 </tbody>
                             </table>
-                            <div class="d-flex justify-content-end mt-4">
-                                {{ $baiviet->links() }}
-                            </div>
-
-                            @else
-                            <div class="text-center"><i>Chưa có bài viết để hiện thị. Nhấn <a class="text-primary" data-toggle="modal" data-target="#addModalBaiViet">vào đây</a> để tạo bài viết. </i></div>
-                            @endif
                         </div>
-
+                        <div class="d-flex justify-content-end mt-4">
+                            {{ $baiviet->links() }}
+                        </div>
 
 
                     </div>

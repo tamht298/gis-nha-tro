@@ -98,9 +98,9 @@ class QLOTro extends Controller
         $pageSize = 10;
         $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
+        if($baiviet)
+        $baiviet=baiviet::find($idkhutro)->paginate($pageSize);
 
-        $baiviet=DB::table('baiviet')->where('makhutro', $idkhutro)->paginate($pageSize);
-        
         return view('pages.user.hostelposts',['pageSize'=>$pageSize,'baiviet'=>$baiviet, 'khunhatro'=>$khunhatro]);
     }
 

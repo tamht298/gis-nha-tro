@@ -250,7 +250,7 @@
                             </div>
 
                             @else
-                            <div class="text-center"><i>Chưa có bài viết để hiện thị. Nhấn <a class="text-primary" data-toggle="modal" data-target="#addModalBaiViet">vào đây</a> để tạo bài viết. </i></div>
+                            
                             @endif
                         </div>
 
