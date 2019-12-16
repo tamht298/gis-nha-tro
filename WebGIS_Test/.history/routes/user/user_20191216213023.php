@@ -23,7 +23,7 @@ Route::get('trang-chu', function () {
 //     return view('pages.user.posts');
 // });
 
-Route::get('lien-he', function () {
+Route::post('lien-he', function () {
     return view('pages.user.contact');
 });
 
@@ -48,4 +48,4 @@ Route::get('trang-tin', 'QLOTro@BaiViet')->name('trang-tin');
 Route::get('doi-mat-khau','QLOTro@TrangDoiMatKhau')->name('doi-mat-khau');
 Route::post('doi-mat-khau','QLOTro@DoiMatKhau')->name('doi-mat-khau');
 
-Route::get('send-email', 'ContactController@sendEmail');
+Route::post('send-email', 'ContactController@sendEmail');

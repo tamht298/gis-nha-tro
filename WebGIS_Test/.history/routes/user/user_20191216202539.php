@@ -27,7 +27,6 @@ Route::get('lien-he', function () {
     return view('pages.user.contact');
 });
 
-
 // Route::get('quan-ly-tro', 'QLOTro@DSSVTro')->name('quan-ly-tro');
 
 Route::post('ThemDSSVTro', 'QLOTro@ThemDSSVTro')->name('ThemDSSVTro');
@@ -48,4 +47,4 @@ Route::get('trang-tin', 'QLOTro@BaiViet')->name('trang-tin');
 Route::get('doi-mat-khau','QLOTro@TrangDoiMatKhau')->name('doi-mat-khau');
 Route::post('doi-mat-khau','QLOTro@DoiMatKhau')->name('doi-mat-khau');
 
-Route::get('send-email', 'ContactController@sendEmail');
+Route::get('send-email', 'ContactController@sendEmail')->name('');

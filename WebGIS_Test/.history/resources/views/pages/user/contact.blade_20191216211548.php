@@ -29,11 +29,11 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputCity">Email<span class="text-danger"> (*)</span></label>
-                                <input type="email" name="email" class="form-control" id="email">
+                                <input type="email" name="email" class="form-control" id="inputCity">
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="inputAddress2">Nội dung<span class="text-danger"> (*)</span></label>
-                                <textarea class="form-control" rows="5" name="noidung" id="noidung" ></textarea>
+                                <textarea class="form-control" rows="5" id="comment" ></textarea>
                             </div>
                         </div>
                     <button type="submit" class="btn btn-primary">Gửi</button>

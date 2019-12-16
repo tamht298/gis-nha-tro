@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-body">
 
-                    <form action="send-email" method="get">
+                    <form action="send-email" method="post">
                         <div class="form-row">
 
                             <div class="form-group col-md-4">

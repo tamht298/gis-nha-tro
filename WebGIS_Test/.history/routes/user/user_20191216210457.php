@@ -27,6 +27,9 @@ Route::get('lien-he', function () {
     return view('pages.user.contact');
 });
 
+Route::get('', function () {
+    return view('pages.user.contact');
+});
 
 // Route::get('quan-ly-tro', 'QLOTro@DSSVTro')->name('quan-ly-tro');
 
