@@ -220,9 +220,9 @@
                     </button>
                 </div>
                 @endif
-                
-                <!-- Thông báo tìm kiếm -->
 
+                <!-- Thông báo tìm kiếm -->
+                <div></div>
                 <!-- end Thông báo tìm kiếm -->
                 <!-- <div class="table table-reponsive"> -->
                 <div class="card-body">
@@ -239,14 +239,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <?php $i=1 ?>
                                 @foreach ($student as $item)
                                 <?php $them = $item->mssv."them";
                                         $sua = $item->mssv."sua";
                                         $xoa = $item->mssv."xoa"; ?>
                                 <tr>
-
 
                                     <th scope="row">{{$i++ + ($student->currentPage() -1)* $pageSize }}</th>
                                     <td>{{$item->mssv}}</td>

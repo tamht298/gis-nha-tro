@@ -71,32 +71,23 @@
         <div class="container-fluid dashboard-content ">
             <!-- Noi dung -->
 
-            <div class=" mb-3"></div>
+            <div class="row mb-3"></div>
             <div class="card">
-                <div class=" card-header">
-                    <div class="row">
-                        <div class="col-md-6 float-left" style="font-size: 20px;">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Dashboard</a>
-                                    </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Quản lý thông tin sinh
-                                        viên</li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <!-- Search bar -->
+                <div class="card-header">
+                    <div class="row float-left" style="font-size: 20px;">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Dashboard</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Quản lý thông tin sinh
+                                    viên</li>
+                            </ol>
+                        </nav>
+                    </div>
 
-                        <div class="col-md-4 navbar-nav">
-                            <form action="./tim-kiem-sinh-vien" method="GET">
-                            <div id="custom-search" class="top-search-bar">
-                                <input class="form-control" name="search" type="text" placeholder="Search..">
-                            </div>
-                        </form>
-                        </div>
 
-                        <!-- End search bar -->
-                        <div class="col-md-2 d-flex align-items-center">
+                    <div class="ml-md-auto">
+                        <div class="row bg-success mr-3 mt-2">
                             <button class="btn btn-success" data-toggle="modal" data-target="#addModal"><i
                                     class="fa fa-plus"></i> Thêm</button>
 
@@ -191,11 +182,22 @@
                             </div>
 
                             <!-- End modal thêm -->
+
+                        </div>
+
+                        <!-- Search bar -->
+
+                        <div class="navbar-nav col-3">
+                            <div id="custom-search" class="mt-2 input-group border border-primary">
+                                <input class="form-control border-0" type="text" placeholder="Nhập tên hoặc mssv">
+                                <div class="input-group-append">
+                                    <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                                  </div>
+                            </div>
+                        </div>
+
+                        <!-- End search bar -->
                     </div>
-
-
-                    </div>
-
 
 
                 </div>
@@ -220,10 +222,6 @@
                     </button>
                 </div>
                 @endif
-                
-                <!-- Thông báo tìm kiếm -->
-
-                <!-- end Thông báo tìm kiếm -->
                 <!-- <div class="table table-reponsive"> -->
                 <div class="card-body">
                     <div class="row table-responsive mx-auto" style="font-size: 16px">
@@ -239,14 +237,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <?php $i=1 ?>
                                 @foreach ($student as $item)
                                 <?php $them = $item->mssv."them";
                                         $sua = $item->mssv."sua";
                                         $xoa = $item->mssv."xoa"; ?>
                                 <tr>
-
 
                                     <th scope="row">{{$i++ + ($student->currentPage() -1)* $pageSize }}</th>
                                     <td>{{$item->mssv}}</td>

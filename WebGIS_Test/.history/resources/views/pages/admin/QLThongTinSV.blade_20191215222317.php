@@ -220,7 +220,7 @@
                     </button>
                 </div>
                 @endif
-                
+
                 <!-- Thông báo tìm kiếm -->
 
                 <!-- end Thông báo tìm kiếm -->
@@ -246,7 +246,7 @@
                                         $sua = $item->mssv."sua";
                                         $xoa = $item->mssv."xoa"; ?>
                                 <tr>
-
+                                    
 
                                     <th scope="row">{{$i++ + ($student->currentPage() -1)* $pageSize }}</th>
                                     <td>{{$item->mssv}}</td>

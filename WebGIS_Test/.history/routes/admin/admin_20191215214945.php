@@ -78,4 +78,4 @@
         Route::get('bieu-do-thong-ke-phuong', 'ThongKe@ChartTheoPhuong')->name('bieu-do-thong-ke-phuong');
 
 
-        Route::get('tim-kiem-sinh-vien', 'QLSinhVien@search')->name('tim-kiem-sinh-vien');
+        Route::get('tim-kiem-sinh-vien', 'ThongKe@ChartTheoPhuong')->name('bieu-do-thong-ke-phuong');

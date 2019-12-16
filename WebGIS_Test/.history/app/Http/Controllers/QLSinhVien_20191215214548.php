@@ -6,11 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\sinhvien;
 use Session;
-use DB;
 
 class QLSinhVien extends Controller
 {
-
     public function DanhsachSV(){
         $pageSize = 4;
         $student = sinhvien::paginate($pageSize);
@@ -77,10 +75,8 @@ class QLSinhVien extends Controller
 
     //tìm kiếm theo mssv
     public function search(Request $req){
-        $pageSize = 4;
         $search = $req->get('search');
-        $student= sinhvien::where('mssv', 'LIKE', "%$search%")->orWhere('ten', 'LIKE', "%$search%")->paginate($pageSize);
-        
-        return view('pages.admin.QLThongTinSV',['student'=>$student, 'pageSize'=>$pageSize]);
+        $student= DB::table('sinhvien')->where('mssv', 'like', '%{$search}%')->orWhere('ten', 'like', '%{$search}%')->paginate(5);
+        return 
     }
 }

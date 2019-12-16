@@ -80,7 +80,6 @@ class QLSinhVien extends Controller
         $pageSize = 4;
         $search = $req->get('search');
         $student= sinhvien::where('mssv', 'LIKE', "%$search%")->orWhere('ten', 'LIKE', "%$search%")->paginate($pageSize);
-        
         return view('pages.admin.QLThongTinSV',['student'=>$student, 'pageSize'=>$pageSize]);
     }
 }

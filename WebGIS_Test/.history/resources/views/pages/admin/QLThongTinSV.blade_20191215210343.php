@@ -71,132 +71,132 @@
         <div class="container-fluid dashboard-content ">
             <!-- Noi dung -->
 
-            <div class=" mb-3"></div>
+            <div class="row mb-3"></div>
             <div class="card">
-                <div class=" card-header">
-                    <div class="row">
-                        <div class="col-md-6 float-left" style="font-size: 20px;">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Dashboard</a>
-                                    </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Quản lý thông tin sinh
-                                        viên</li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <!-- Search bar -->
-
-                        <div class="col-md-4 navbar-nav">
-                            <form action="./tim-kiem-sinh-vien" method="GET">
-                            <div id="custom-search" class="top-search-bar">
-                                <input class="form-control" name="search" type="text" placeholder="Search..">
-                            </div>
-                        </form>
-                        </div>
-
-                        <!-- End search bar -->
-                        <div class="col-md-2 d-flex align-items-center">
-                            <button class="btn btn-success" data-toggle="modal" data-target="#addModal"><i
-                                    class="fa fa-plus"></i> Thêm</button>
-
-                            <!-- Modal thêm -->
+                <div class="card-header">
+                    <div class="row float-left" style="font-size: 20px;">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Dashboard</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Quản lý thông tin sinh
+                                    viên</li>
+                            </ol>
+                        </nav>
+                    </div>
 
 
-                            <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
-                                aria-labelledby="addModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h2 class="modal-title" id="addModalLabel">Thêm Thông Tin Sinh Viên</h3>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                        </div>
 
-                                        <div class="modal-body">
-                                            <form action="themSV" method="POST">
-                                                @csrf
-                                                <div class="row">
-                                                    <div class="form-group col-6">
-                                                        <label class="col-form-label font-weight-bold">MSSV<span
-                                                                class="text-danger"> (*)</span></label>
-                                                        <input type="text" name="mssv" class="form-control">
-                                                    </div>
+                    <div class="row float-right bg-success mr-3 mt-2">
+                        <button class="btn btn-success" data-toggle="modal" data-target="#addModal"><i
+                                class="fa fa-plus"></i> Thêm</button>
 
-                                                    <div class="form-group col-6">
-                                                        <label class="col-form-label font-weight-bold">Số
-                                                            điện thoại<span class="text-danger"> (*)</span></label>
-                                                        <input type="text" name="dienthoai" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="form-group col-6">
-                                                        <label class="col-form-label font-weight-bold">Họ
-                                                            <span class="text-danger"> (*)</span></label>
-                                                        <input type="text" name="ho" class="form-control">
-                                                    </div>
+                        <!-- Modal thêm -->
 
-                                                    <div class="form-group col-6">
-                                                        <label class="col-form-label font-weight-bold">Email<span
-                                                                class="text-danger"> (*)</span></label>
-                                                        <input type="text" name="email" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="form-group col-6">
-                                                        <label class="col-form-label font-weight-bold">Tên
-                                                            sinh viên<span class="text-danger"> (*)</span></label>
-                                                        <input type="text" name="ten" class="form-control">
-                                                    </div>
 
-                                                    <div class="form-group col-6">
-                                                        <label class="col-form-label font-weight-bold">Giới
-                                                            tính:</label>
-                                                        <select name="gioitinh" class="form-control">
-                                                            <option value="Nam">Nam</option>
-                                                            <option value="Nữ">Nữ</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group col-6">
-                                                        <label class="col-form-label font-weight-bold">Lớp<span
-                                                                class="text-danger"> (*)</span></label>
-                                                        <select name="lop" class="form-control">
-                                                            <option value="D16HT01">D16HT01</option>
-                                                            <option value="D16PM01">D16PM01</option>
-                                                            <option value="D16PM02">D16PM02</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
+                        <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+                            aria-labelledby="addModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title" id="addModalLabel">Thêm Thông Tin Sinh Viên</h3>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
 
-                                                    <div class="form-group col-6">
-                                                        <label class="col-form-label font-weight-bold">Ngày
-                                                            sinh:</label>
-                                                        <input type="date" name="ngaysinh" class="form-control">
-                                                    </div>
-
+                                    <div class="modal-body">
+                                        <form action="themSV" method="POST">
+                                            @csrf
+                                            <div class="row">
+                                                <div class="form-group col-6">
+                                                    <label class="col-form-label font-weight-bold">MSSV<span
+                                                            class="text-danger"> (*)</span></label>
+                                                    <input type="text" name="mssv" class="form-control">
                                                 </div>
 
+                                                <div class="form-group col-6">
+                                                    <label class="col-form-label font-weight-bold">Số
+                                                        điện thoại<span class="text-danger"> (*)</span></label>
+                                                    <input type="text" name="dienthoai" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-6">
+                                                    <label class="col-form-label font-weight-bold">Họ
+                                                        <span class="text-danger"> (*)</span></label>
+                                                    <input type="text" name="ho" class="form-control">
+                                                </div>
 
-                                        </div>
-                                        <div class="modal-footer">
-                                            <input type="submit" class="btn btn-success" value="Thêm">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                                                <div class="form-group col-6">
+                                                    <label class="col-form-label font-weight-bold">Email<span
+                                                            class="text-danger"> (*)</span></label>
+                                                    <input type="text" name="email" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-6">
+                                                    <label class="col-form-label font-weight-bold">Tên
+                                                        sinh viên<span class="text-danger"> (*)</span></label>
+                                                    <input type="text" name="ten" class="form-control">
+                                                </div>
 
-                                            </form>
-                                        </div>
+                                                <div class="form-group col-6">
+                                                    <label class="col-form-label font-weight-bold">Giới
+                                                        tính:</label>
+                                                    <select name="gioitinh" class="form-control">
+                                                        <option value="Nam">Nam</option>
+                                                        <option value="Nữ">Nữ</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-6">
+                                                    <label class="col-form-label font-weight-bold">Lớp<span
+                                                            class="text-danger"> (*)</span></label>
+                                                    <select name="lop" class="form-control">
+                                                        <option value="D16HT01">D16HT01</option>
+                                                        <option value="D16PM01">D16PM01</option>
+                                                        <option value="D16PM02">D16PM02</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="form-group col-6">
+                                                    <label class="col-form-label font-weight-bold">Ngày
+                                                        sinh:</label>
+                                                    <input type="date" name="ngaysinh" class="form-control">
+                                                </div>
+
+                                            </div>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-success" value="Thêm">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+
+                                        </form>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- End modal thêm -->
+                        <!-- End modal thêm -->
+
                     </div>
 
+                    <!-- Search bar -->
 
+                    <div class="navbar-nav col-3 float-right">
+                        <div id="custom-search" class="mt-3 input-group border border-primary">
+                            <input class="form-control border-0" type="text" placeholder="Nhập tên hoặc mssv">
+                            <div class="input-group-append">
+                                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                              </div>
+                        </div>
                     </div>
 
-
+                    <!-- End search bar -->
 
                 </div>
                 <?php //Hiển thị thông báo thành công?>
@@ -220,10 +220,6 @@
                     </button>
                 </div>
                 @endif
-                
-                <!-- Thông báo tìm kiếm -->
-
-                <!-- end Thông báo tìm kiếm -->
                 <!-- <div class="table table-reponsive"> -->
                 <div class="card-body">
                     <div class="row table-responsive mx-auto" style="font-size: 16px">
@@ -239,14 +235,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <?php $i=1 ?>
                                 @foreach ($student as $item)
                                 <?php $them = $item->mssv."them";
                                         $sua = $item->mssv."sua";
                                         $xoa = $item->mssv."xoa"; ?>
                                 <tr>
-
 
                                     <th scope="row">{{$i++ + ($student->currentPage() -1)* $pageSize }}</th>
                                     <td>{{$item->mssv}}</td>

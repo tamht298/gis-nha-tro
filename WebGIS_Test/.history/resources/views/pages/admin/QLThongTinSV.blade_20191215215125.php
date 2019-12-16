@@ -88,9 +88,9 @@
                         <!-- Search bar -->
 
                         <div class="col-md-4 navbar-nav">
-                            <form action="./tim-kiem-sinh-vien" method="GET">
+                            <form action="./" method="GET">
                             <div id="custom-search" class="top-search-bar">
-                                <input class="form-control" name="search" type="text" placeholder="Search..">
+                                <input class="form-control" type="text" placeholder="Search..">
                             </div>
                         </form>
                         </div>
@@ -220,10 +220,6 @@
                     </button>
                 </div>
                 @endif
-                
-                <!-- Thông báo tìm kiếm -->
-
-                <!-- end Thông báo tìm kiếm -->
                 <!-- <div class="table table-reponsive"> -->
                 <div class="card-body">
                     <div class="row table-responsive mx-auto" style="font-size: 16px">
@@ -239,14 +235,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <?php $i=1 ?>
                                 @foreach ($student as $item)
                                 <?php $them = $item->mssv."them";
                                         $sua = $item->mssv."sua";
                                         $xoa = $item->mssv."xoa"; ?>
                                 <tr>
-
 
                                     <th scope="row">{{$i++ + ($student->currentPage() -1)* $pageSize }}</th>
                                     <td>{{$item->mssv}}</td>

@@ -220,7 +220,7 @@
                     </button>
                 </div>
                 @endif
-                
+
                 <!-- Thông báo tìm kiếm -->
 
                 <!-- end Thông báo tìm kiếm -->
@@ -246,7 +246,15 @@
                                         $sua = $item->mssv."sua";
                                         $xoa = $item->mssv."xoa"; ?>
                                 <tr>
-
+                                    @if ( Session::has('noresult') )
+                <div class="alert alert-success alert-dismissible m-2" role="alert" id="success-alert">
+                    <strong>{{ Session::get('noresult') }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+                @endif
 
                                     <th scope="row">{{$i++ + ($student->currentPage() -1)* $pageSize }}</th>
                                     <td>{{$item->mssv}}</td>
