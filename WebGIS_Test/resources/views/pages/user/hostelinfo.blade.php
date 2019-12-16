@@ -32,7 +32,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+                                            <?php $i = 1; ?>
                                             @foreach ($SVOTro as $item)
 
                                             <?php
@@ -107,7 +107,10 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                
+                                <div class="d-flex justify-content-end mt-4">
+                                    {{ $SVOTro->links() }}
+
+                                </div>
                             </div>
 
                         </div>
