@@ -110,7 +110,7 @@ class QLkhutro extends Controller
         join('khunhatro_tdm_point','otro.makhutro','=','khunhatro_tdm_point.gid')->
         join('sinhvien','otro.mssv','=','sinhvien.mssv')->
         where('khunhatro_tdm_point.gid','=',$idChuTro)->
-        select('sinhvien.ho','sinhvien.ten','sinhvien.mssv','sinhvien.dienthoai','sinhvien.ngaysinh',
+        select('sinhvien.ho','sinhvien.ten','sinhvien.mssv','otro.ngayden','otro.sophong',
         'sinhvien.gioitinh')->get();
 
         $tenkhutro=DB::table('khunhatro_tdm_point')->where('khunhatro_tdm_point.gid','=',$idChuTro)->
