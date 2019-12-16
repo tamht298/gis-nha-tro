@@ -34,17 +34,15 @@ class QLOTro extends Controller
     public function ThemDSSVTro(Request $req)
     {
         $Otro = new OTro();
-
-        $Otro->mssv=$req->mssv;
-        $Otro->ngayden=$req->ngayden;
-        $Otro->ngaydi=$req->ngaydi;
-        $Otro->makhutro=1;
-        $Otro->sophong=$req->sophong;
+        $Otro->mssv = $req->mssv;
+        $Otro->ngayden = $req->ngayden;
+        $Otro->makhutro = $req->session()->get('makhutro');
+        $Otro->sophong = $req->sophong;
 
         $Otro->save();
 
         echo "<script>alert('Thêm thành công!')</script>";
-        return redirect()->route('quan-ly-tro');
+        return redirect()->back()->with('alert', 'Thêm thành công!');
     }
 
     public function SuaDSSVTro($id,Request $req)
@@ -53,11 +51,11 @@ class QLOTro extends Controller
         $Otro->mssv=$req->mssv;
         $Otro->ngayden=$req->ngayden;
         $Otro->ngaydi=$req->ngaydi;
-        $Otro->makhutro=1;
+        $Otro->makhutro = $req->session()->get('makhutro');
         $Otro->sophong=$req->sophong;
 
         $Otro->save();
-        return redirect()->back() ->with('alert', 'Sửa thành công!');
+        return redirect()->back()->with('alert', 'Sửa thành công!');
     }
 
     public function XoaDSSVTro($id)
@@ -74,7 +72,7 @@ class QLOTro extends Controller
         $khutro->sodienthoai = $req->sodienthoai;
         $khutro->diachi = $req->diachi;
         $khutro->save();
-        return redirect()->back() ->with('alert', 'Sửa thành công!');
+        return redirect()->back()->with('alert', 'Sửa thành công!');
     }
     //Quản lý sinh viên trọ (chủ trọ)
     public function SinhVienTro(Request $request){
