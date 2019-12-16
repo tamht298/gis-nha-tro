@@ -99,6 +99,7 @@
     <script src="template-admin/Content/assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
     <script src="template-admin/Content/assets/vendor/charts/c3charts/C3chartjs.js"></script>
     <script src="template/js/fade-alert.js"></script>
+    <script src="{{asset('template/js/dssv.js')}}"></script>
 
 </body>
 

@@ -56,6 +56,7 @@
         Route::post('themNhatro','QLkhutro@ThemKhuTro')->name('themNT');
         Route::post('suaNhatro/{gid}','QLkhutro@SuaNhaTro')->name('SuaNT');
         Route::post('xoaNhatro/{gid}','QLkhutro@XoaNhaTro')->name('XoaNT');
+        Route::get('danhsachsvotro/{gid}','QLkhutro@DsSinhVienOtro')->name('DSSVotro');
 
         Route::get('thong-tin-tro', function () {
             return view('pages.admin.ThongTinTro');
