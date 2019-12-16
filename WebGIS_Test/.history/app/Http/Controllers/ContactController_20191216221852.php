@@ -22,7 +22,7 @@ class ContactController extends Controller
             'name' => $name,
             'phone' => $phone,
             'mail' => $mail,
-            'content'=> $content
+            'content'=>
         ];
         Mail::to('tamht298@gmail.com')->send(new SendMaill($details));
         return view('pages.user.respone', ['details'=>$details]);

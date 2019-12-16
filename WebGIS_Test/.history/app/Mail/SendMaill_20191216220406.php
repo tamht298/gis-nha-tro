@@ -22,7 +22,6 @@ class SendMaill extends Mailable
         $this->details = $details;
     }
 
-
     /**
      * Build the message.
      *
@@ -30,6 +29,6 @@ class SendMaill extends Mailable
      */
     public function build()
     {
-        return $this->subject('Subject: Hỗ trợ Web GIS tạm trú')->view('pages.user.respone')->with('details', $this->details);;
+        return $this->subject('Subject: Hỗ trợ Web GIS tạm trú')->view('pages.user.contact');
     }
 }

@@ -25,7 +25,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputCity">Tiêu đề<span class="text-danger"> (*)</span></label>
-                                <input type="text"  name="tieude" class="form-control" id="tieude">
+                                <input type="text" value="tiu" name="tieude" class="form-control" id="tieude">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputCity">Email<span class="text-danger"> (*)</span></label>

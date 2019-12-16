@@ -18,14 +18,11 @@ class ContactController extends Controller
         $content = $req->noidung;
 
         $details = [
-            'title' => $title,
-            'name' => $name,
-            'phone' => $phone,
-            'mail' => $mail,
-            'content'=> $content
+            'title' => 'Title: OK rồi',
+            'body' => 'Body: this is for testing'
         ];
         Mail::to('tamht298@gmail.com')->send(new SendMaill($details));
-        return view('pages.user.respone', ['details'=>$details]);
+        return view('pages.user.contact', ['details'=>$details, 'title'=>]);
 
     }
 }

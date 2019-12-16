@@ -21,8 +21,7 @@ class ContactController extends Controller
             'title' => $title,
             'name' => $name,
             'phone' => $phone,
-            'mail' => $mail,
-            'content'=> $content
+            
         ];
         Mail::to('tamht298@gmail.com')->send(new SendMaill($details));
         return view('pages.user.respone', ['details'=>$details]);
