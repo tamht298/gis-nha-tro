@@ -61,26 +61,26 @@
                                                                         @csrf
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Mã chủ trọ<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" readonly name="gid" value="{{$khunhatro->gid}}" class="form-control">
+                                                                            <input type="text" readonly name="gid" value="{{$khutro->gid}}" class="form-control">
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Tên nhà trọ<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="tennhatro" value="{{$khunhatro->tennhatro}}" class="form-control">
+                                                                            <input type="text" name="tennhatro" value="{{$khutro->tennhatro}}" class="form-control">
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Tên chủ trọ<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="tenchutro" value="{{$khunhatro->tenchutro}}" class="form-control">
+                                                                            <input type="text" name="tenchutro" value="{{$khutro->tenchutro}}" class="form-control">
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Số điện thoại<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="sodienthoai" value="{{$khunhatro->sodienthoai}}" class="form-control">
+                                                                            <input type="text" name="sodienthoai" value="{{$khutro->sodienthoai}}" class="form-control">
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Địa chỉ<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="diachi" value="{{$khunhatro->diachi}}" class="form-control">
+                                                                            <input type="text" name="diachi" value="{{$khutro->diachi}}" class="form-control">
                                                                         </div>
 
                                                                 </div>

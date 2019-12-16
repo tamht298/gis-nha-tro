@@ -36,9 +36,9 @@
 
                                             <tr>
                                                 <td>{{$khunhatro->tennhatro}}</td>
-                                                <td>{{$khunhatro->tenchutro}}</td>
-                                                <td>{{$khunhatro->sodienthoai}}</td>
-                                                <td>{{$khunhatro->diachi}}</td>
+                                                <td>{{$khutro->tenchutro}}</td>
+                                                <td>{{$khutro->sodienthoai}}</td>
+                                                <td>{{$khutro->diachi}}</td>
                                                 <td>
                                                     <span data-toggle="modal" data-target="#su">
                                                         <a href="#" class="text-success" data-toggle="tooltip" data-placement="left" data-html="true" title="Sửa"><i class="fa fa-edit fa-lg"></i></a>
@@ -57,30 +57,30 @@
                                                                         </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form action="{{ route('SuaTTChuTro',['gid' => $khunhatro->gid])}}" method="post">
+                                                                    <form action="{{ route('SuaTTChuTro',['gid' => $item->gid])}}" method="post">
                                                                         @csrf
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Mã chủ trọ<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" readonly name="gid" value="{{$khunhatro->gid}}" class="form-control">
+                                                                            <input type="text" readonly name="gid" value="{{$item->gid}}" class="form-control">
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Tên nhà trọ<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="tennhatro" value="{{$khunhatro->tennhatro}}" class="form-control">
+                                                                            <input type="text" name="tennhatro" value="{{$item->tennhatro}}" class="form-control">
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Tên chủ trọ<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="tenchutro" value="{{$khunhatro->tenchutro}}" class="form-control">
+                                                                            <input type="text" name="tenchutro" value="{{$item->tenchutro}}" class="form-control">
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Số điện thoại<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="sodienthoai" value="{{$khunhatro->sodienthoai}}" class="form-control">
+                                                                            <input type="text" name="sodienthoai" value="{{$item->sodienthoai}}" class="form-control">
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Địa chỉ<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="diachi" value="{{$khunhatro->diachi}}" class="form-control">
+                                                                            <input type="text" name="diachi" value="{{$item->diachi}}" class="form-control">
                                                                         </div>
 
                                                                 </div>

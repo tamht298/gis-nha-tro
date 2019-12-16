@@ -88,8 +88,8 @@ class QLOTro extends Controller
         $pageSize = 1;
         $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
-        // $tro = khunhatro::find($idkhutro)->paginate($pageSize);
-        return view('pages.user.hostelinfo',['khunhatro'=>$khunhatro]);
+        $tro = khunhatro::find($idkhutro)->paginate($pageSize);
+        return view('pages.user.hostelinfo',['tro'=>$tro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
     }
 
     public function BaiVietChuTro(Request $request){

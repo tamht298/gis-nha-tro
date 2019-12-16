@@ -75,12 +75,12 @@
 
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Số điện thoại<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="sodienthoai" value="{{$khunhatro->sodienthoai}}" class="form-control">
+                                                                            <input type="text" name="sodienthoai" value="{{$khutro->sodienthoai}}" class="form-control">
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Địa chỉ<span class="text-danger"> (*)</span></label>
-                                                                            <input type="text" name="diachi" value="{{$khunhatro->diachi}}" class="form-control">
+                                                                            <input type="text" name="diachi" value="{{$khutro->diachi}}" class="form-control">
                                                                         </div>
 
                                                                 </div>
