@@ -85,13 +85,12 @@ class QLOTro extends Controller
     }
 
     public function ThongTinChuTro(Request $request){
-        // $pageSize = 1;
+        $pageSize = 1;
         $idkhutro = $request->session()->get('makhutro');
-        // $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->leftjoin('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
-        $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->leftjoin('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid');
-        return view('pages.user.hostelinfo',['SVOTro'=>$SVOTro]);
+        $khunhatro = khunhatro::find($idkhutro);
+        $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->leftjoin('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
+        return view('pages.user.hostelinfo',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
     }
-
 
     public function BaiVietChuTro(Request $request){
         $pageSize = 10;
