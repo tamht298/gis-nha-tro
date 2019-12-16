@@ -80,7 +80,7 @@
 
                                                                         <div class="form-group">
                                                                             <label class="col-form-label font-weight-bold">Địa chỉ<span class="text-danger"> (*)</span></label>
-                                                                            <textarea name="diachi" class="form-control">{{$khunhatro->diachi}}</textarea>
+                                                                            <textarea name="diachi" value="{{$khunhatro->diachi}}" class="form-control"></textarea>
                                                                         </div>
 
                                                                 </div>

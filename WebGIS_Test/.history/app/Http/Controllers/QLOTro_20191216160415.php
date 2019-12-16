@@ -26,7 +26,7 @@ class QLOTro extends Controller
     {
         $pageSize = 4;
         $idkhutro = $request->session()->get('makhutro');
-        $SVOTro=DB::table('otro')->where('makhutro', $idkhutro, 'ngaydi', )->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid','khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
+        $SVOTro=DB::table('otro')->where('makhutro', $idkhutro, '')->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid','khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
         //$SVOTro = OTro::paginate($pageSize);
         return view('pages.user.hostel',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize]);
     }
@@ -79,7 +79,7 @@ class QLOTro extends Controller
         $pageSize = 10;
         $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
-        $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->whereNull('ngaydi')->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
+        $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
 
         return view('pages.user.hostelstudent',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
     }
