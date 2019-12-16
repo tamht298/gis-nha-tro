@@ -16,7 +16,7 @@
                                 <div class="row float-right bg-success mr-3 mt-2">
                                 </div>
                             </div>
-                            <!-- <div class="table table-reponsive"> -->
+                
                             <div class="card-body">
 
                                 <div class="row table-responsive mx-auto" style="font-size: 16px">
@@ -32,7 +32,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $i = 1; ?>
+                                            
                                             @foreach ($SVOTro as $item)
 
                                             <?php
@@ -107,10 +107,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="d-flex justify-content-end mt-4">
-                                    {{ $SVOTro->links() }}
-
-                                </div>
+                                
                             </div>
 
                         </div>
