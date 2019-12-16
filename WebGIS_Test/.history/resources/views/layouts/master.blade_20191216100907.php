@@ -79,10 +79,10 @@
 
                                 <a class="nav-link text-white navbar-text dropdown-toggle" data-toggle="dropdown"
                                     href="#"><i class="fas fa-file-alt"></i> Quản lý trọ </a>
-                                <ul class="dropdown-menu" role="menu" style="width:200px">
-                                    <li><a class="nav-link" href="thong-tin-chu-tro"><i class="fas fa-hotel"></i> Thông tin chủ trọ</a></li>
-                                    <li><a class="nav-link" href="danh-sach-tro"><i class="fas fa-users"></i> Danh sách sinh viên</a></li>
-                                    <li><a class="nav-link" href="danh-sach-bai-viet"><i class="fas fa-bookmark"></i> Quản lý bài viết</a></li>
+                                <ul class="dropdown-menu" role="menu" style=""
+                                    <li><a class="nav-link" href="thong-tin-chu-tro">Thông tin chủ trọ</a></li>
+                                    <li><a class="nav-link" href="danh-sach-tro">Danh sách sinh viên</a></li>
+                                    <li><a class="nav-link" href="danh-sach-bai-viet">Quản lý bài viết</a></li>
                                 </ul>
 
 
