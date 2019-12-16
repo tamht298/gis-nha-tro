@@ -94,7 +94,7 @@
                                     <th scope="col">Tên sinh viên</th>
                                     <th scope="col">Giới tính</th>
                                     <th scope="col">Số điện thoại</th>
-                                    <th scope="col">Ngày sinh</th>
+                                    <th scope="col">Địa chỉ</th>
                                 </tr>
                             </thead>
                             <tbody>
