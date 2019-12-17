@@ -196,7 +196,7 @@
                                     <td scope="row">{{$nhatro->sodienthoai}}</td>
                                     <td scope="row">
                                         <span >
-                                            <a href="{{ route('khutro.view',['gid' => $nhatro->gid])}}"
+                                            <a href="{{ route('DSSVotro',['gid' => $nhatro->gid])}}"
                                                 class="text-danger mr-3" data-toggle="tooltip" data-placement="right"
                                                 data-html="true" title="Xem danh sách"><i
                                                     class="fas fa-th-list text-primary"></i></a>

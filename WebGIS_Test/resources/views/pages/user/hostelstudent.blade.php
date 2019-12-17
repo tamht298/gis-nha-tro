@@ -51,13 +51,7 @@
                                                             <input type="date" name="ngayden" class="form-control">
                                                         </div>
 
-                                                        <div class="form-group">
-                                                            <input type="hidden" name="ngaydi" class="form-control">
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <input type="hidden" name="makhutro" class="form-control">
-                                                        </div>
+                                                        
 
                                                         <div class="form-group">
                                                             <label class="col-form-label font-weight-bold">Mã phòng<span class="text-danger"> (*)</span></label>
