@@ -14,22 +14,22 @@ use Hash;
 class QLOTro extends Controller
 {
     //
-    public function DsOtro(Request $req){
-        $pageSize = 4;
-        $dsOTro=DB::table('otro')->where('mssv', $req->getmssv)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
-        $student = sinhvien::find($req->getmssv);
+    // public function DsOtro(Request $req){
+    //     $pageSize = 4;
+    //     $dsOTro=DB::table('otro')->where('mssv', $req->getmssv)->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
+    //     $student = sinhvien::find($req->getmssv);
 
-        return view('pages.admin.ThongTinTro',['dsOTro'=>$dsOTro, 'pageSize'=>$pageSize, 'student'=>$student]);
-    }
+    //     return view('pages.admin.ThongTinTro',['dsOTro'=>$dsOTro, 'pageSize'=>$pageSize, 'student'=>$student]);
+    // }
 
-    public function DSSVTro(Request $req)
-    {
-        $pageSize = 4;
-        $idkhutro = $request->session()->get('makhutro');
-        $SVOTro=DB::table('otro')->where('makhutro', $idkhutro, 'ngaydi', )->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid','khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
-        //$SVOTro = OTro::paginate($pageSize);
-        return view('pages.user.hostel',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize]);
-    }
+    // public function DSSVTro(Request $req)
+    // {
+    //     $pageSize = 4;
+    //     $idkhutro = $request->session()->get('makhutro');
+    //     $SVOTro=DB::table('otro')->where('makhutro', $idkhutro, 'ngaydi', )->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid','khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
+    //     $SVOTro = OTro::paginate($pageSize);
+    //     return view('pages.user.hostel',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize]);
+    // }
 
     public function ThemDSSVTro(Request $req)
     {
@@ -40,9 +40,12 @@ class QLOTro extends Controller
         $Otro->sophong = $req->sophong;
 
         $Otro->save();
-
-        echo "<script>alert('Thêm thành công!')</script>";
-        return redirect()->back()->with('alert', 'Thêm thành công!');
+        if($Otro){
+            Session::flash('success', 'Thêm thành công!');
+        }else {
+            Session::flash('error', 'Thêm thất bại!');
+        }
+        return redirect()->back();
     }
 
     public function SuaDSSVTro($id,Request $req)
@@ -55,13 +58,23 @@ class QLOTro extends Controller
         $Otro->sophong=$req->sophong;
 
         $Otro->save();
-        return redirect()->back()->with('alert', 'Sửa thành công!');
+        if($Otro){
+            Session::flash('success', 'Cập nhật thành công!');
+        }else {
+            Session::flash('error', 'Cập nhật thất bại!');
+        }
+        return redirect()->back();
     }
 
     public function XoaDSSVTro($id)
     {
-        OTro::destroy($id);
-        return redirect()->back()->with('alert', 'Xóa dữ liệu thành công!');
+        $OTro = OTro::destroy($id);
+        if($OTro){
+            Session::flash('success', 'Xóa thành công!');
+        }else {
+            Session::flash('error', 'Xóa thất bại!');
+        }
+        return redirect()->back();
     }
 
     public function SuaTTChuTro($gid,Request $req)
@@ -80,8 +93,10 @@ class QLOTro extends Controller
         $idkhutro = $request->session()->get('makhutro');
         $khunhatro = khunhatro::find($idkhutro);
         $SVOTro = DB::table('otro')->where('makhutro', $idkhutro)->whereNull('ngaydi')->join('khunhatro_tdm_point', 'otro.makhutro', '=', 'khunhatro_tdm_point.gid')->paginate($pageSize);
-
-        return view('pages.user.hostelstudent',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro]);
+        // $DSSV = sinhvien::all();
+        $select = DB::table('otro')->whereNull('ngaydi')->select('mssv');
+        $DSSV = DB::table('sinhvien')->whereNotIn('mssv',$select)->get();
+        return view('pages.user.hostelstudent',['SVOTro'=>$SVOTro, 'pageSize'=>$pageSize,'khunhatro'=>$khunhatro,'DSSV'=>$DSSV]);
     }
 
     public function ThongTinChuTro(Request $request){
