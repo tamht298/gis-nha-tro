@@ -43,8 +43,13 @@
                                                     <form action="ThemDSSVTro" method="post">
                                                         @csrf
                                                         <div class="form-group">
-                                                            <label class="col-form-label font-weight-bold">Mã sinh viên<span class="text-danger"> (*)</span></label>
-                                                            <input type="text" name="mssv" class="form-control">
+                                                            <label class="col-form-label font-weight-bold">Mã sinh viên - Họ tên<span class="text-danger"> (*)</span></label>
+                                                            
+                                                            <select name="mssv" id="mssv" class="form-control">
+                                                            @foreach($DSSV as $dssv)       
+                                                            <option value="{{$dssv->mssv}}">{{$dssv->mssv}} - {{$dssv->ho}} {{$dssv->ten}}</option>
+                                                            @endforeach
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-form-label font-weight-bold">Ngày đến<span class="text-danger"> (*)</span></label>
@@ -90,6 +95,27 @@
                                 <?php $tongsv++ ?>
                                 @endforeach
                                 <h5>Tổng số sinh viên: {{$tongsv}} /sinh viên</h5>
+                                <!-- Hiển thị thông báo thành công>-->
+                                @if ( Session::has('success') )
+                                <div class="alert alert-success alert-dismissible m-2" role="alert" id="success-alert">
+                                    <strong>{{ Session::get('success') }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+                                </div>
+                                @endif
+
+                                <!-- Hiển thị thông báo lỗi? -->
+                                @if ( Session::has('error') )
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <strong>{{ Session::get('error') }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+                                </div>
+                                @endif
                                 <div class="row table-responsive mx-auto" style="font-size: 16px">
                                     <table class="table table-striped">
                                         <thead style="background: #3CADF1; color: antiquewhite">
@@ -187,7 +213,9 @@
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                 </div>
-
+                                                                <div class="modal-body">
+                                                                    <h5>Bạn có chắc muốn xóa sinh viên có mã số <span>{{$item->mssv}}</span></h5>
+                                                                </div>
                                                                 <div class="modal-footer">
                                                                     <form action="{{ route('XoaDSSVTro',['id' => $item->id])}}" method="post">
                                                                         @csrf

@@ -68,9 +68,9 @@
                     <div class="row float-left" style="font-size: 20px;">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Dashboard</a>
+                                <li class="breadcrumb-item"><a class="text-primary" href="/gis-nha-tro/WebGIS_Test/public/trang-quan-tri/">Dashboard</a>
                                 </li>
-                                <li class="breadcrumb-item"><a class="text-primary" href="trang-quan-tri">Quản lý khu trọ</a>
+                            <li class="breadcrumb-item"><a class="text-primary" href="/gis-nha-tro/WebGIS_Test/public/quan-ly-khu-tro/">Quản lý khu trọ</a>
                                 </li>
                             <li class="breadcrumb-item active" aria-current="page">Danh sách sinh viên tại nhà trọ
                                 @foreach ($tenkhutro as $item)
@@ -93,8 +93,8 @@
                                     <th scope="col" class="text-center">Mã sinh viên</th>
                                     <th scope="col">Tên sinh viên</th>
                                     <th scope="col">Giới tính</th>
-                                    <th scope="col">Số điện thoại</th>
-                                    <th scope="col">Ngày sinh</th>
+                                    <th scope="col">Ngày đến</th>
+                                    <th scope="col">Số phòng</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -107,8 +107,8 @@
                                     <td scope="row" class="text-center">{{$dssv->mssv}}</td>
                                     <td scope="row">{{$dssv->ho}} {{$dssv->ten}}</td>
                                     <td scope="row" >{{$dssv->gioitinh}}</td>
-                                    <td scope="row">{{$dssv->dienthoai}}</td>
-                                    <td scope="row">{{$dssv->ngaysinh}}</td>
+                                    <td scope="row">{{$dssv->ngayden}}</td>
+                                    <td scope="row">{{$dssv->sophong}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
