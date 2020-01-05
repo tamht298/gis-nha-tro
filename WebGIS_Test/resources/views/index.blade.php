@@ -17,6 +17,35 @@
                 var map = L.map('mapid').setView([10.9805, 106.6745], 13);
             </script>
             <script src="./js/geojsonbackground.js"></script>
+            <script>
+                        var geojsonFeature = {
+
+                                                "type": "FeatureCollection",
+                                                "features": [
+                                                    @foreach ($dsNhatro as $nhatro )
+                                                    {
+                                                        "type": "Feature",
+                                                        "properties": {
+                                                            "marker-color": "#ff0000",
+                                                            "marker-size": "medium",
+                                                            "marker-symbol": "",
+                                                            "tennhatro": "\"{{$nhatro->tennhatro}}\"",
+                                                            "tenchutro": "\"{{$nhatro->tenchutro}}\"",
+                                                            "dienthoai": "0"+{{$nhatro->sodienthoai}},
+                                                            "diachi": "\"{{$nhatro->diachi}}\""
+                                                        },
+                                                        "geometry": {
+                                                            "type": "Point",
+                                                            "coordinates": [
+                                                                {{$nhatro->x}},
+                                                                {{$nhatro->y}}
+                                                            ]
+                                                        }
+                                                    },
+                                                    @endforeach
+                                                ]
+                                            };
+                </script>
             <script src="./js/geojsondata.js"></script>
             <script src="./js/geojson.js"></script>
         </div>

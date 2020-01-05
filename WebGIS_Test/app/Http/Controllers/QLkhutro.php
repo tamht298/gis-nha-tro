@@ -12,12 +12,16 @@ use Session;
 class QLkhutro extends Controller
 {
     //
-
+    public function TrangChinh(){
+        $dsNhatro = DB::table('khunhatro_tdm_point')->select('gid', 'tennhatro', 'tenchutro', 'sodienthoai', 'diachi', DB::raw('ST_X(geom) as x'), DB::raw('ST_Y(geom) as y'))->get();
+        return view('index',['dsNhatro'=>$dsNhatro]);
+    }
     public function trangchu(){
         return view('index');
     }
     public function DsKhuTro(){
-        $dsNhatro=khunhatro::all();
+        $dsNhatro = DB::table('khunhatro_tdm_point')->select('gid', 'tennhatro', 'tenchutro', 'sodienthoai', 'diachi', DB::raw('ST_X(geom) as x'), DB::raw('ST_Y(geom) as y'))->get();
+        //$dsNhatro=khunhatro::all();
         return view('pages.admin.QLKhuTro',['dsNhatro'=>$dsNhatro]);
     }
     public function ThemKhuTro(Request $request){

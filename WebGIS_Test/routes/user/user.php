@@ -11,14 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('trang-chu', function () {
-    return view('index');
-});
-
+Route::get('/', 'QLkhutro@TrangChinh')->name('/');
+Route::get('trang-chu', 'QLkhutro@TrangChinh')->name('trang-chu');
 // Route::get('trang-tin', function () {
 //     return view('pages.user.posts');
 // });
