@@ -58,6 +58,9 @@
         Route::post('xoaNhatro/{gid}','QLkhutro@XoaNhaTro')->name('XoaNT');
         Route::get('danhsachsvotro/{gid}','QLkhutro@DsSinhVienOtro')->name('DSSVotro');
 
+        Route::get('QLDSKhuNhaTro','QLkhutro@QLDSKhuNhaTro')->name('QLDSKhuNhaTro');
+        Route::post('themNhakhutro','QLkhutro@ThemKhuTroBanDo')->name('themNhakhutro');
+
         Route::get('thong-tin-tro', function () {
             return view('pages.admin.ThongTinTro');
         })->name('view-thong-tin-tro');

@@ -27,6 +27,11 @@
 
                     </li>
                     <li class="nav-item">
+                                <a class="nav-link" href="QLDSKhuNhaTro"><i class="fa fa-fw fa-rocket"></i>Bản đồ quản lý khu
+                                    trọ</a>
+
+                            </li>
+                    <li class="nav-item">
 
                         <a class="nav-link active" href="#"><i class="far fa-file"></i>Quản lý bài
                             viết</a>

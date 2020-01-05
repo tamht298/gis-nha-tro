@@ -16,6 +16,31 @@ class QLkhutro extends Controller
         $dsNhatro = DB::table('khunhatro_tdm_point')->select('gid', 'tennhatro', 'tenchutro', 'sodienthoai', 'diachi', DB::raw('ST_X(geom) as x'), DB::raw('ST_Y(geom) as y'))->get();
         return view('index',['dsNhatro'=>$dsNhatro]);
     }
+
+    public function QLDSKhuNhaTro(){
+        $dsNhatro = DB::table('khunhatro_tdm_point')->select('gid', 'tennhatro', 'tenchutro', 'sodienthoai', 'diachi', DB::raw('ST_X(geom) as x'), DB::raw('ST_Y(geom) as y'))->get();
+        return view('pages.admin.QLKhuTroBanDo',['dsNhatro'=>$dsNhatro]);
+    }
+
+    public function ThemKhuTroBanDo(Request $request){
+        // $khunhatro = new khunhatro();
+        // $khunhatro->tennhatro=$request->txtTennhatro;
+        // $khunhatro->diachi=$request->txtDiachi;
+        // $khunhatro->tenchutro=$request->txtTenchutro;
+        // $khunhatro->sodienthoai=$request->txtSodienthoai;
+        // $khunhatro->save();
+        $khunhatro=DB::table('khunhatro_tdm_point')->insert(['tennhatro'=>$request->txtTennhatro,
+         'tenchutro'=>$request->txtTenchutro, 'sodienthoai'=>$request->txtSodienthoai,
+         'diachi'=>$request->txtDiachi, 'geom'=>DB::raw("ST_GeomFromText('POINT(".$request->x." ".$request->y.")', 4326)")]);
+        if($khunhatro){
+            Session::flash('success', 'Thêm khu trọ thành công!');
+        }
+        else {
+		    Session::flash('error', 'Thêm khu trọ thất bại!');
+	    }
+        return redirect()->route('QLDSKhuNhaTro');
+    }
+
     public function trangchu(){
         return view('index');
     }

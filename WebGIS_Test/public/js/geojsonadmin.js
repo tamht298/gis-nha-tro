@@ -24,10 +24,6 @@ var truonghoc =L.geoJson(geojsonSchool,{
 }).addTo(map);
 
 var phuongTANAN = L.geoJson(TANAN, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Tân An</div>');
-    },
     color: '#555555',
     fillColor: '#8080ff',
     fillOpacity: 0.3,
@@ -35,10 +31,6 @@ var phuongTANAN = L.geoJson(TANAN, {
 }).addTo(map);
 
 var phuongHIEPAN = L.geoJson(HIEPAN, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Hiệp An</div>');
-    },
     color: '#555555',
     fillColor: '#808080',
     fillOpacity: 0.3,
@@ -46,10 +38,6 @@ var phuongHIEPAN = L.geoJson(HIEPAN, {
 }).addTo(map);
 
 var phuongHIEPTHANH = L.geoJson(HIEPTHANH, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Hiệp Thành</div>');
-    },
     color: '#555555',
     fillColor: '#ff8000',
     fillOpacity: 0.3,
@@ -57,10 +45,6 @@ var phuongHIEPTHANH = L.geoJson(HIEPTHANH, {
 }).addTo(map);
 
 var phuongTUONGBINHHIEP = L.geoJson(TUONGBINHHIEP, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Tương Bình Hiệp</div>');
-    },
     color: '#555555',
     fillColor: '#ff0080',
     fillOpacity: 0.3,
@@ -68,10 +52,6 @@ var phuongTUONGBINHHIEP = L.geoJson(TUONGBINHHIEP, {
 }).addTo(map);
 
 var phuongCHANHMY = L.geoJson(CHANHMY, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Chánh Mỹ</div>');
-    },
     color: '#555555',
     fillColor: '#ffff80',
     fillOpacity: 0.3,
@@ -79,10 +59,6 @@ var phuongCHANHMY = L.geoJson(CHANHMY, {
 }).addTo(map);
 
 var phuongDINHHOA = L.geoJson(DINHHOA, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Định Hoà</div>');
-    },
     color: '#555555',
     fillColor: '#008000',
     fillOpacity: 0.3,
@@ -90,10 +66,6 @@ var phuongDINHHOA = L.geoJson(DINHHOA, {
 }).addTo(map);
 
 var phuongCHANHNGHIA = L.geoJson(CHANHNGHIA, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Chánh Nghĩa</div>');
-    },
     color: '#555555',
     fillColor: '#804040',
     fillOpacity: 0.3,
@@ -101,10 +73,6 @@ var phuongCHANHNGHIA = L.geoJson(CHANHNGHIA, {
 }).addTo(map);
 
 var phuongPHUCUONG = L.geoJson(PHUCUONG, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Phú Cường</div>');
-    },
     color: '#555555',
     fillColor: '#400040',
     fillOpacity: 0.3,
@@ -112,10 +80,6 @@ var phuongPHUCUONG = L.geoJson(PHUCUONG, {
 }).addTo(map);
 
 var phuongHOAPHU = L.geoJson(HOAPHU, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Hoà Phú</div>');
-    },
     color: '#555555',
     fillColor: '#ff8080',
     fillOpacity: 0.3,
@@ -123,10 +87,6 @@ var phuongHOAPHU = L.geoJson(HOAPHU, {
 }).addTo(map);
 
 var phuongPHULOI = L.geoJson(PHULOI, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Phú Lợi</div>');
-    },
     color: '#555555',
     fillColor: '#00ff80',
     fillOpacity: 0.3,
@@ -134,10 +94,6 @@ var phuongPHULOI = L.geoJson(PHULOI, {
 }).addTo(map);
 
 var phuongPHUHOA = L.geoJson(PHUHOA, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Phú Hoà</div>');
-    },
     color: '#555555',
     fillColor: '#008080',
     fillOpacity: 0.3,
@@ -145,10 +101,6 @@ var phuongPHUHOA = L.geoJson(PHUHOA, {
 }).addTo(map);
 
 var phuongPHUTHO = L.geoJson(PHUTHO, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Phú Thọ</div>');
-    },
     color: '#555555',
     fillColor: '#00ffff',
     fillOpacity: 0.3,
@@ -156,10 +108,6 @@ var phuongPHUTHO = L.geoJson(PHUTHO, {
 }).addTo(map);
 
 var phuongPHUTAN = L.geoJson(PHUTAN, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Phú Tân</div>');
-    },
     color: '#555555',
     fillColor: '#0080c0',
     fillOpacity: 0.3,
@@ -167,13 +115,20 @@ var phuongPHUTAN = L.geoJson(PHUTAN, {
 }).addTo(map);
 
 var phuongPHUMY = L.geoJson(PHUMY, {
-    onEachFeature: function (feature, layer)
-    {
-        layer.bindPopup('<div style="font-weight: bold;">Phú Mỹ</div>');
-    },
     color: '#555555',
     fillColor: '#808000',
     fillOpacity: 0.3,
     radius: 500
 }).addTo(map);
 
+var popup = L.popup();
+    function onMapClick(e)
+    {
+        var csrf = "<?php echo @csrf; ?>";
+        popup
+        .setLatLng(e.latlng)
+        .setContent("<form class='form-group' action='themNhakhutro' method='POST'>"+csrf+" Tên nhà trọ:<br> <input type='text' class='form-control' style='height: 1%;' name='txtTennhatro'> <br> Tên chủ trọ:<br> <input type='text' class='form-control' style='height: 1%;' name='txtTenchutro'> <br> Điện thoại:<br> <input type='text' class='form-control' style='height: 1%;' name='txtSodienthoai'> <br> Địa chỉ:<br> <input type='text' class='form-control' style='height: 1%;' name='txtDiachi'> <br><input type='hidden' name='txtGeom'><input type='submit' class='btn btn-success btn-xs form-control' name='txtThem' value='Thêm Khu Trọ'> <br></form>" + e.latlng.toString())
+        .openOn(map);
+            //alert("Toa do vua chon la: " + e.latlng.toString());
+    }
+map.on('click',onMapClick);
