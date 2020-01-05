@@ -36,18 +36,9 @@
                             viết</a>
                     </li>
                     <li class="nav-item ">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../thong-ke-theo-phuong"><i class="fas fa-arrow-right"></i>Thống kê theo phường</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../thong-ke-theo-chu-tro"><i class="fas fa-arrow-right"></i>Thống kê theo chủ trọ</a>
-                            </li>
-
-                        </ul>
                         {{-- <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                             data-target="#submenu-1-2" aria-controls="submenu-1-2"><i
-                                class="far fa-calendar-minus"></i>Quản lý thống kê</a>
+                                class="far fa-calendar-minus"></i>Quản lý thống kê</a> --}}
                         <div id="submenu-1-2" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -58,7 +49,7 @@
                                 </li>
 
                             </ul>
-                        </div> --}}
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../quan-ly-tai-khoan"><i class="fa fa-fw fa-rocket"></i>Quản lý tài

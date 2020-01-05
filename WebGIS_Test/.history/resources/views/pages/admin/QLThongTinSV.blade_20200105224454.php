@@ -258,7 +258,7 @@
                                     <td><form  action="thong-tin-tro" class="mb-0" method="post">
                                         @csrf
                                         <input type="hidden" name="getmssv" value="{{$item->mssv}}">
-                                        <input type="submit" class="btn btn-link pl-0" style="font-size: 1rem; padding-top:0" value="{{$item->ho}} {{$item->ten}}" data-toggle="tooltip" data-html="true"
+                                        <input type="submit" class="btn btn-link pl-0" style="font-size: 1rem; " value="{{$item->ho}} {{$item->ten}}" data-toggle="tooltip" data-html="true"
                                         data-placement="top" title="Chi tiết quá trình trọ">
                                         </button>
                                             </form>

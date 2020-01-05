@@ -38,10 +38,10 @@
                     <li class="nav-item ">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="../thong-ke-theo-phuong"><i class="fas fa-arrow-right"></i>Thống kê theo phường</a>
+                                <a class="nav-link" href="../thong-ke-theo-phuong"><i class></i>ống kê theo phường</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../thong-ke-theo-chu-tro"><i class="fas fa-arrow-right"></i>Thống kê theo chủ trọ</a>
+                                <a class="nav-link" href="../thong-ke-theo-chu-tro">Thống kê theo chủ trọ</a>
                             </li>
 
                         </ul>
