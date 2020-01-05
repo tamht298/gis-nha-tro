@@ -79,63 +79,7 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="row float-right bg-success mr-3 mt-2">
-                        <button class="btn btn-success" data-toggle="modal" data-target="#addModal"><i
-                                class="fa fa-plus"></i> Thêm</button>
-
-                        <!-- Modal thêm -->
-
-                        <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
-                            aria-labelledby="addModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2 class="modal-title" id="addModalLabel">Thêm Thông Tin Khu Trọ</h3>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="themNhatro" method="POST">
-                                            {{ csrf_field() }}
-                                            <!-- <div class="form-group">
-                                                        <label class="col-form-label font-weight-bold">Mã khu
-                                                            trọ:</label>
-                                                        <input type="text" class="form-control">
-                                                    </div> -->
-                                            <div class="form-group">
-                                                <label class="col-form-label font-weight-bold">Tên khu
-                                                    trọ<span class="text-danger" name="tennhatro"> (*)</span></label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-form-label font-weight-bold">Tên chủ trọ<span
-                                                        class="text-danger"> (*)</span></label>
-                                                <input type="text" name="tenchutro" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-form-label font-weight-bold">Địa chỉ<span
-                                                        class="text-danger"> (*)</span></label>
-                                                <textarea type="text" name="diachi" class="form-control"
-                                                    placeholder="Thông tin địa chỉ khu trọ"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-form-label font-weight-bold">Số điện
-                                                    thoại<span class="text-danger"> (*)</span></label>
-                                                <input type="text" name="sodienthoai" class="form-control">
-                                            </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                                        <button type="submit" class="btn btn-success">Thêm</button>
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End modal thêm -->
-                    </div>
+                    <div class="row float-right bg-success mr-3 mt-2"></div>
                     <!-- Search bar -->
 
                     <div class="navbar-nav col-3 float-right">
